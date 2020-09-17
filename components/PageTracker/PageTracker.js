@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import PageTrackerButton from '../PageTrackerButton';
 
@@ -16,10 +17,10 @@ export const PageTracker = (props) => {
 };
 
 PageTracker.propTypes = {
-  children: React.PropTypes.node,
-  totalPages: React.PropTypes.number,
-  currentPage: React.PropTypes.number,
-  onClick: React.PropTypes.func
+  children: PropTypes.node,
+  totalPages: PropTypes.number,
+  currentPage: PropTypes.number,
+  onClick: PropTypes.func
 };
 
 export default PageTracker;

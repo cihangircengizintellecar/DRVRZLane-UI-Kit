@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import PropTypes from 'prop-types';
+import React from 'react';
 
 import classes from './TradeInInformation.scss';
 
@@ -38,12 +39,12 @@ TradeInInformation.propTypes = {
   leaseTerm: PropTypes.string,
   apr: PropTypes.string,
   onEditClick: PropTypes.func,
-  offersAndIncentives: React.PropTypes.arrayOf(React.PropTypes.shape({
-    name: React.PropTypes.string,
-    value: React.PropTypes.string
+  offersAndIncentives: PropTypes.arrayOf(PropTypes.shape({
+    name: PropTypes.string,
+    value: PropTypes.string
   })),
-  warrantiesAndAddons: React.PropTypes.arrayOf(React.PropTypes.shape({
-    name: React.PropTypes.string
+  warrantiesAndAddons: PropTypes.arrayOf(PropTypes.shape({
+    name: PropTypes.string
   })),
   extendedWarranty: PropTypes.string,
   gapInsurance: PropTypes.string,

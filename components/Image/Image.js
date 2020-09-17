@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 
 const Image = function (props) {
@@ -5,9 +6,9 @@ const Image = function (props) {
 };
 
 Image.propTypes = {
-  source: React.PropTypes.string,
-  className: React.PropTypes.string,
-  attributes: React.PropTypes.shape({})
+  source: PropTypes.string,
+  className: PropTypes.string,
+  attributes: PropTypes.shape({})
 };
 
 export default Image;

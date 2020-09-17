@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import classes from './ExampleStory.scss';
 
@@ -8,7 +9,7 @@ export const ExampleStory = (props) => {
 };
 
 ExampleStory.propTypes = {
-  children: React.PropTypes.node
+  children: PropTypes.node
 };
 
 export default ExampleStory;

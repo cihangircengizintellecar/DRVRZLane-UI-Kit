@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react';
+import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 import TableHeaderCell from '../TableElements/TableHeaderCell';
 import classes from './TableElements.scss';
 
@@ -75,18 +76,18 @@ class Table extends Component {
 }
 
 Table.propTypes = {
-  children: React.PropTypes.node,
-  headings: PropTypes.arrayOf(React.PropTypes.shape({
-    label: React.PropTypes.string,
-    clickToSort: React.PropTypes.func
+  children: PropTypes.node,
+  headings: PropTypes.arrayOf(PropTypes.shape({
+    label: PropTypes.string,
+    clickToSort: PropTypes.func
   })).isRequired,
-  mobileHeadings: PropTypes.arrayOf(React.PropTypes.shape({
-    label: React.PropTypes.string,
-    clickToSort: React.PropTypes.func
+  mobileHeadings: PropTypes.arrayOf(PropTypes.shape({
+    label: PropTypes.string,
+    clickToSort: PropTypes.func
   })).isRequired,
-  portableHeadings: PropTypes.arrayOf(React.PropTypes.shape({
-    label: React.PropTypes.string,
-    clickToSort: React.PropTypes.func
+  portableHeadings: PropTypes.arrayOf(PropTypes.shape({
+    label: PropTypes.string,
+    clickToSort: PropTypes.func
   }))
 };
 

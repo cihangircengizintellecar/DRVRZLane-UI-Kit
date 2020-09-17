@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import classes from './PageTrackerButton.scss';
 
@@ -14,9 +15,9 @@ export const PageTrackerButton = (props) => {
 };
 
 PageTrackerButton.propTypes = {
-  children: React.PropTypes.node,
-  label: React.PropTypes.string,
-  isActive: React.PropTypes.bool
+  children: PropTypes.node,
+  label: PropTypes.string,
+  isActive: PropTypes.bool
 };
 
 export default PageTrackerButton;

@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import PropTypes from 'prop-types';
+import React from 'react';
 import classes from './ModalTemplates.scss';
 import checkImage from './check.png';
 

@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import Row from '../TableElements/Row';
 import Column from '../TableElements/Column';
@@ -97,16 +98,16 @@ class AddOnEMRow extends Component {
 }
 
 AddOnEMRow.propTypes = {
-  id: React.PropTypes.string,
-  name: React.PropTypes.string,
-  image: React.PropTypes.string,
-  requirements: React.PropTypes.string,
-  value: React.PropTypes.string,
-  readOnly: React.PropTypes.bool,
-  onSelect: React.PropTypes.func,
-  onExpand: React.PropTypes.func,
-  onArchive: React.PropTypes.func,
-  children: React.PropTypes.node
+  id: PropTypes.string,
+  name: PropTypes.string,
+  image: PropTypes.string,
+  requirements: PropTypes.string,
+  value: PropTypes.string,
+  readOnly: PropTypes.bool,
+  onSelect: PropTypes.func,
+  onExpand: PropTypes.func,
+  onArchive: PropTypes.func,
+  children: PropTypes.node
 };
 
 export default AddOnEMRow;

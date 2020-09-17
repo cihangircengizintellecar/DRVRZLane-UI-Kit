@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import classes from './ExpandButton.scss';
 import expandImage from './expand.png';
@@ -9,8 +10,8 @@ const ExpandButton = function (props) {
 };
 
 ExpandButton.propTypes = {
-  onClick: React.PropTypes.func,
-  children: React.PropTypes.node
+  onClick: PropTypes.func,
+  children: PropTypes.node
 };
 
 export default ExpandButton;

@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import classes from './ModalPopover.scss';
 import closeImage from './close.png';
@@ -44,10 +45,10 @@ class ModalPopover extends Component {
 }
 
 ModalPopover.propTypes = {
-  clickClose: React.PropTypes.func,
-  children: React.PropTypes.node,
-  isSelfClosing: React.PropTypes.bool,
-  hideCloseButton: React.PropTypes.bool
+  clickClose: PropTypes.func,
+  children: PropTypes.node,
+  isSelfClosing: PropTypes.bool,
+  hideCloseButton: PropTypes.bool
 };
 
 export default ModalPopover;

@@ -1,12 +1,80 @@
 import React from 'react';
-import { storiesOf } from '@kadira/storybook';
+import { storiesOf } from '@storybook/react';
 
 import PurchaseInformation from './PurchaseInformation';
 import lexusLogoImage from './lexus-logo.png';
 
+const creditScoreOptions = [
+  {
+    label: '0 - 500',
+    value: 500
+  },
+  {
+    label: '501 - 600',
+    value: 600
+  },
+  {
+    label: '601 - 700',
+    value: 700
+  },
+  {
+    label: '701 - 800',
+    value: 800
+  },
+  {
+    label: '801 - 1000',
+    value: 1000
+  }
+];
+
+const termOptions = [
+  {
+    label: '12 months',
+    value: 12
+  },
+  {
+    label: '24 months',
+    value: 24
+  },
+  {
+    label: '36 months',
+    value: 36
+  },
+  {
+    label: '48 months',
+    value: 48
+  }
+];
+
+let creditScore = 600;
+let terms = 12;
+
+let showPriceBreakdown = true;
+
+const updateCreditScore = (val) => {
+  creditScore = val.value.value;
+};
+
+const updateTerms = (val) => {
+  terms = val.value.value;
+};
+
+const togglePriceBreakdown = () => {
+  showPriceBreakdown = !showPriceBreakdown;
+};
+
 storiesOf('PurchaseInformation', module)
   .add('default', () => (
     <PurchaseInformation
+      togglePriceBreakdown={togglePriceBreakdown}
+      showPriceBreakdown={showPriceBreakdown}
+      creditScore={creditScore}
+      creditScoreOptions={creditScoreOptions}
+      termOptions={termOptions}
+      terms={terms}
+      updateTerms={updateTerms}
+      monthlyPayment={210.99}
+      updateCreditScore={updateCreditScore}
       headerText="Fastlane Purchase Information"
       manufacturerLogo={lexusLogoImage}
       carName="2017 Lexus RX 350"
@@ -16,7 +84,6 @@ storiesOf('PurchaseInformation', module)
       mileage=""
       tradeInOffer="13495"
       tradeInAmountOwed="1000"
-      monthlyPayment=""
       tax="100"
       extraFees={
         [{

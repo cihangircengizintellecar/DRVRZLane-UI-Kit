@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import PropTypes from 'prop-types';
+import React from 'react';
 import classes from './SoloCheckbox.scss';
 import GreenCheck from './GreenCheck.svg';
 import classNames from '../../helpers/ClassNames';

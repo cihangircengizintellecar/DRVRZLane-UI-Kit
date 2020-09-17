@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import classes from './Input.scss';
 
@@ -148,26 +149,26 @@ class Input extends Component {
 }
 
 Input.propTypes = {
-  readOnly: React.PropTypes.bool,
-  placeholder: React.PropTypes.string,
-  className: React.PropTypes.string,
-  theme: React.PropTypes.string,
-  size: React.PropTypes.string,
-  inputAttrs: React.PropTypes.shape({
-    name: React.PropTypes.string
+  readOnly: PropTypes.bool,
+  placeholder: PropTypes.string,
+  className: PropTypes.string,
+  theme: PropTypes.string,
+  size: PropTypes.string,
+  inputAttrs: PropTypes.shape({
+    name: PropTypes.string
   }),
-  disabled: React.PropTypes.bool,
-  label: React.PropTypes.string,
-  value: React.PropTypes.string,
-  onChange: React.PropTypes.func,
-  onBlur: React.PropTypes.func,
-  onFocus: React.PropTypes.func,
-  onKeyUp: React.PropTypes.func,
-  onKeyDown: React.PropTypes.func,
-  onClick: React.PropTypes.func,
-  validationErrors: React.PropTypes.arrayOf(React.PropTypes.string),
-  validateFunction: React.PropTypes.func.isRequired,
-  children: React.PropTypes.node
+  disabled: PropTypes.bool,
+  label: PropTypes.string,
+  value: PropTypes.string,
+  onChange: PropTypes.func,
+  onBlur: PropTypes.func,
+  onFocus: PropTypes.func,
+  onKeyUp: PropTypes.func,
+  onKeyDown: PropTypes.func,
+  onClick: PropTypes.func,
+  validationErrors: PropTypes.arrayOf(PropTypes.string),
+  validateFunction: PropTypes.func.isRequired,
+  children: PropTypes.node
 };
 
 export default Input;

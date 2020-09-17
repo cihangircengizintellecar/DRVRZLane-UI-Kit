@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import PropTypes from 'prop-types';
+import React from 'react';
 import classes from './PurchaseLineItem.scss';
 import formatCurrency from '../../helpers/FormatCurrency';
 import makeNegative from '../../helpers/MakeNegative';

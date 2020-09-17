@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react';
+import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 import classes from './MobileFooter.scss';
 import arrowImage from './arrow.png';
 import PurchaseLineItem from '../PurchaseLineItem';
@@ -154,15 +155,15 @@ MobileFooter.propTypes = {
   dealerLogo: PropTypes.string,
   msrp: PropTypes.string,
   downPayment: PropTypes.string,
-  warrantiesAndAddons: PropTypes.arrayOf(React.PropTypes.shape({
+  warrantiesAndAddons: PropTypes.arrayOf(PropTypes.shape({
     title: PropTypes.string,
     price: PropTypes.string
   })),
-  offersAndIncentives: PropTypes.arrayOf(React.PropTypes.shape({
+  offersAndIncentives: PropTypes.arrayOf(PropTypes.shape({
     name: PropTypes.string,
     amount: PropTypes.string
   })),
-  extraFees: PropTypes.arrayOf(React.PropTypes.shape({
+  extraFees: PropTypes.arrayOf(PropTypes.shape({
     name: PropTypes.string,
     amount: PropTypes.string
   })),

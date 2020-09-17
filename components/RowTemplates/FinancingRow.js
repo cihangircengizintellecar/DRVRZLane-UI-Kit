@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react';
+import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 import classes from './OfferRow.scss';
 import clEM from './OfferEMRow.scss';
 import Row from '../TableElements/Row';
@@ -31,19 +32,19 @@ class FinancingRow extends Component {
     }
   };
 
-  onChange: Function = ({ field, val }) => {
+  onChange = ({ field, val }) => {
     this.setState({ [field]: val });
     this.props.onChange({ field, val });
   }
 
-  isValid: Function = (spread) => {
+  isValid = (spread) => {
     return !(spread.length <= 0);
   }
 
   render () {
     return (
       <Row>
-        <Column classNames={[classes.LenderCheckbox]}>
+        <Column>
           <div className={classes.OfferRowCheckboxWrapper}>
             <div>
               {this.state.isSelected ?

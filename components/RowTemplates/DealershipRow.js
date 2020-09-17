@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import PropTypes from 'prop-types';
+import React from 'react';
 import Row from '../TableElements/Row';
 import Column from '../TableElements/Column';
 import classes from './DealershipRow.scss';

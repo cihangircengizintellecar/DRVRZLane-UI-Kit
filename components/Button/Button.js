@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import classes from './Button.scss';
 
@@ -24,16 +25,16 @@ const Button = function (props) {
 };
 
 Button.propTypes = {
-  size: React.PropTypes.string,
-  theme: React.PropTypes.string,
-  type: React.PropTypes.string,
-  onClick: React.PropTypes.func,
-  buttonAttrs: React.PropTypes.shape({}),
-  disabled: React.PropTypes.bool,
-  label: React.PropTypes.string,
-  icon: React.PropTypes.string,
-  className: React.PropTypes.string,
-  children: React.PropTypes.node
+  size: PropTypes.string,
+  theme: PropTypes.string,
+  type: PropTypes.string,
+  onClick: PropTypes.func,
+  buttonAttrs: PropTypes.shape({}),
+  disabled: PropTypes.bool,
+  label: PropTypes.string,
+  icon: PropTypes.string,
+  className: PropTypes.string,
+  children: PropTypes.node
 };
 
 export default Button;

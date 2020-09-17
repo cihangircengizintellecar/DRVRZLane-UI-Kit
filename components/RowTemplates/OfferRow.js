@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import Row from '../TableElements/Row';
 import Column from '../TableElements/Column';
@@ -170,21 +171,21 @@ class OfferRow extends Component {
 }
 
 OfferRow.propTypes = {
-  id: React.PropTypes.string,
-  name: React.PropTypes.string,
-  category: React.PropTypes.string,
-  compatibilities: React.PropTypes.arrayOf(React.PropTypes.shape({
-    name: React.PropTypes.string
+  id: PropTypes.string,
+  name: PropTypes.string,
+  category: PropTypes.string,
+  compatibilities: PropTypes.arrayOf(PropTypes.shape({
+    name: PropTypes.string
   })),
-  requirements: React.PropTypes.string,
-  amount: React.PropTypes.string,
-  type: React.PropTypes.string,
-  isSelected: React.PropTypes.bool,
-  hideCheckbox: React.PropTypes.bool,
-  readOnly: React.PropTypes.bool,
-  onSelect: React.PropTypes.func,
-  onExpand: React.PropTypes.func,
-  children: React.PropTypes.node
+  requirements: PropTypes.string,
+  amount: PropTypes.string,
+  type: PropTypes.string,
+  isSelected: PropTypes.bool,
+  hideCheckbox: PropTypes.bool,
+  readOnly: PropTypes.bool,
+  onSelect: PropTypes.func,
+  onExpand: PropTypes.func,
+  children: PropTypes.node
 };
 
 export default OfferRow;

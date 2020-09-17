@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import classes from './WarrantyBox.scss';
 
@@ -50,13 +51,13 @@ class WarrantyBox extends Component {
 }
 
 WarrantyBox.propTypes = {
-  package: React.PropTypes.string,
-  name: React.PropTypes.string,
-  description: React.PropTypes.string,
-  value: React.PropTypes.string,
-  isSelected: React.PropTypes.bool,
-  readOnly: React.PropTypes.bool,
-  toggleSelect: React.PropTypes.func
+  package: PropTypes.string,
+  name: PropTypes.string,
+  description: PropTypes.string,
+  value: PropTypes.string,
+  isSelected: PropTypes.bool,
+  readOnly: PropTypes.bool,
+  toggleSelect: PropTypes.func
   // onExpand: React.PropTypes.func,
   // children: React.PropTypes.node
 };

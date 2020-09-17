@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import RadioButton from './RadioButton';
 import classes from './RadioButtonGroup.scss';
@@ -55,22 +56,22 @@ class RadioButtonGroup extends Component {
 }
 
 RadioButtonGroup.propTypes = {
-  recordField: React.PropTypes.string,
-  onChange: React.PropTypes.func,
-  large: React.PropTypes.bool,
-  selectedValue: React.PropTypes.oneOfType([
-    React.PropTypes.string,
-    React.PropTypes.shape({})
+  recordField: PropTypes.string,
+  onChange: PropTypes.func,
+  large: PropTypes.bool,
+  selectedValue: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.shape({})
   ]),
-  options: React.PropTypes.arrayOf([
-    React.PropTypes.string,
-    React.PropTypes.shape({
-      displayValue: React.PropTypes.string,
-      value: React.PropTypes.string,
-      tabIndex: React.PropTypes.string
+  options: PropTypes.arrayOf([
+    PropTypes.string,
+    PropTypes.shape({
+      displayValue: PropTypes.string,
+      value: PropTypes.string,
+      tabIndex: PropTypes.string
     })
   ]),
-  className: React.PropTypes.string
+  className: PropTypes.string
 };
 
 export default RadioButtonGroup;

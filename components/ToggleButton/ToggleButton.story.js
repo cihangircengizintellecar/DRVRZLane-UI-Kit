@@ -1,9 +1,10 @@
 import React from 'react';
-import { storiesOf, action } from '@kadira/storybook';
+import { storiesOf } from '@storybook/react';
+import { action } from '@storybook/addon-actions';
 
 import ToggleButton from './ToggleButton';
 
-const toggleOptions = ['Open', 'History']
+const toggleOptions = ['Open', 'History'];
 let optionSelected = toggleOptions[0];
 
 storiesOf('ToggleButton', module)

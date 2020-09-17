@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react';
+import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 import formatCurrency from '../../helpers/FormatCurrency';
 import addCommasForThousands from '../../helpers/AddCommasForThousands';
 import classes from './CombinedFinancingTerms.scss';

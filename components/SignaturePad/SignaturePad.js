@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import Button from '../Button';
 import cls from './SignaturePad.scss';
@@ -8,9 +9,9 @@ const CANVAS_HEIGHT = 150;
 
 class SignaturePad extends React.Component {
   static propTypes = {
-    onSaveSignature: React.PropTypes.func,
-    canvasWidth: React.PropTypes.number,
-    canvasHeight: React.PropTypes.number
+    onSaveSignature: PropTypes.func,
+    canvasWidth: PropTypes.number,
+    canvasHeight: PropTypes.number
   }
 
   ref = (el) => {

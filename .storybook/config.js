@@ -1,9 +1,9 @@
-import React from 'react';
-import { configure, addDecorator } from '@kadira/storybook';
-import path from 'path';
+import { configure } from '@storybook/react';
 
+// automatically import all files ending in *.stories.js
+const req = require.context('../', true, /\.story.js$/);
 function loadStories() {
-  require('../stories');
+  req.keys().forEach((filename) => req(filename));
 }
 
 configure(loadStories, module);

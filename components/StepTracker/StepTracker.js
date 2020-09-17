@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import classes from './StepTracker.scss';
 
@@ -40,12 +41,12 @@ const StepTracker = function (props) {
 };
 
 StepTracker.propTypes = {
-  steps: React.PropTypes.arrayOf(React.PropTypes.shape({
-    name: React.PropTypes.string
+  steps: PropTypes.arrayOf(PropTypes.shape({
+    name: PropTypes.string
   })),
-  currentStep: React.PropTypes.number,
-  onClick: React.PropTypes.func,
-  isLease: React.PropTypes.bool
+  currentStep: PropTypes.number,
+  onClick: PropTypes.func,
+  isLease: PropTypes.bool
 };
 
 export default StepTracker;

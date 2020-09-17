@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import PropTypes from 'prop-types';
+import React from 'react';
 import Table from '../TableElements/Table';
 import Row from '../TableElements/Row';
 import Column from '../TableElements/Column';
@@ -226,8 +227,8 @@ DealSummary.propTypes = {
   code: PropTypes.string,
   msrp: PropTypes.string,
   tradeInOffer: PropTypes.shape({
-    value: React.PropTypes.string,
-    requirements: React.PropTypes.string
+    value: PropTypes.string,
+    requirements: PropTypes.string
   }),
   tradeInAmountOwed: PropTypes.string,
   downPayment: PropTypes.string,
@@ -235,18 +236,18 @@ DealSummary.propTypes = {
   mileage: PropTypes.string,
   apr: PropTypes.string,
   terms: PropTypes.string,
-  extraFees: React.PropTypes.arrayOf(React.PropTypes.shape({
-    name: React.PropTypes.string,
-    value: React.PropTypes.string
+  extraFees: PropTypes.arrayOf(PropTypes.shape({
+    name: PropTypes.string,
+    value: PropTypes.string
   })),
-  offersAndIncentives: React.PropTypes.arrayOf(React.PropTypes.shape({
-    name: React.PropTypes.string,
-    value: React.PropTypes.string
+  offersAndIncentives: PropTypes.arrayOf(PropTypes.shape({
+    name: PropTypes.string,
+    value: PropTypes.string
   })),
-  warrantiesAndAddons: React.PropTypes.arrayOf(React.PropTypes.shape({
-    name: React.PropTypes.string
+  warrantiesAndAddons: PropTypes.arrayOf(PropTypes.shape({
+    name: PropTypes.string
   })),
-  tax: React.PropTypes.string,
+  tax: PropTypes.string,
   extendedWarranty: PropTypes.string,
   gapInsurance: PropTypes.string,
   total: PropTypes.string,

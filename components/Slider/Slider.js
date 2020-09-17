@@ -1,5 +1,6 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
 import cls from './Slider.scss';
+import PropTypes from 'prop-types';
 import RCSlider from 'rc-slider';
 
 Slider.propTypes = {

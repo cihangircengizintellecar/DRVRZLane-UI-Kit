@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import classes from './ToggleButton.scss';
 
@@ -35,11 +36,11 @@ class ToggleButton extends Component {
 }
 
 ToggleButton.propTypes = {
-  selection: React.PropTypes.string,
-  onChange: React.PropTypes.func,
-  toggleOptions: React.PropTypes.arrayOf(React.PropTypes.string).isRequired,
-  className: React.PropTypes.string,
-  children: React.PropTypes.node
+  selection: PropTypes.string,
+  onChange: PropTypes.func,
+  toggleOptions: PropTypes.arrayOf(PropTypes.string).isRequired,
+  className: PropTypes.string,
+  children: PropTypes.node
 };
 
 export default ToggleButton;

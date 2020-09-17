@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import Row from '../TableElements/Row';
 import Column from '../TableElements/Column';
@@ -99,7 +100,7 @@ class AddOnRow extends Component {
             <h5>{this.props.title}</h5>
             <div className={`${classes.addOnRowValue} ${classes.showOnMobile}`}>
               {this.props.price &&
-                <span>{formatCurrency(this.props.price)}</span>
+                <span>{formatCurrency(this.props.price)}* / month</span>
               }
             </div>
           </div>
@@ -108,7 +109,10 @@ class AddOnRow extends Component {
         <Column classNames={[classes.addOnColumn]}>
           <div className={classes.addOnRowValue}>
             {this.props.price ?
-              <span>{formatCurrency(this.props.price)}</span>
+              <div>
+                <div><span>{formatCurrency(this.props.price)}*</span></div>
+                <div><span className={classes.perMonth}>a month</span></div>
+              </div>
               :
               <span>See dealership for details.</span>
             }
@@ -134,14 +138,14 @@ class AddOnRow extends Component {
 }
 
 AddOnRow.propTypes = {
-  id: React.PropTypes.string,
-  title: React.PropTypes.string,
-  price: React.PropTypes.string,
-  description: React.PropTypes.string,
-  isSelected: React.PropTypes.bool,
-  onSelect: React.PropTypes.func,
-  onExpand: React.PropTypes.func,
-  children: React.PropTypes.node
+  id: PropTypes.string,
+  title: PropTypes.string,
+  price: PropTypes.string,
+  description: PropTypes.string,
+  isSelected: PropTypes.bool,
+  onSelect: PropTypes.func,
+  onExpand: PropTypes.func,
+  children: PropTypes.node
 };
 
 export default AddOnRow;

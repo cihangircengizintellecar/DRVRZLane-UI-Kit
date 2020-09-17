@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import classes from './RadioButton.scss';
 
@@ -32,20 +33,20 @@ const RadioButton = function (props) {
 };
 
 RadioButton.propTypes = {
-  label: React.PropTypes.string,
-  large: React.PropTypes.bool,
-  checked: React.PropTypes.bool,
-  tabIndex: React.PropTypes.string,
-  onChange: React.PropTypes.func,
-  displayValue: React.PropTypes.string,
-  value: React.PropTypes.oneOfType([
-    React.PropTypes.string,
-    React.PropTypes.shape({})
+  label: PropTypes.string,
+  large: PropTypes.bool,
+  checked: PropTypes.bool,
+  tabIndex: PropTypes.string,
+  onChange: PropTypes.func,
+  displayValue: PropTypes.string,
+  value: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.shape({})
   ]),
-  recordField: React.PropTypes.string,
-  selectedValue: React.PropTypes.oneOfType([
-    React.PropTypes.string,
-    React.PropTypes.shape({})
+  recordField: PropTypes.string,
+  selectedValue: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.shape({})
   ])
 };
 

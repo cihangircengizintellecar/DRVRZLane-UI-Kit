@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import Row from '../../TableElements/Row';
 import Column from '../../TableElements/Column';
@@ -124,22 +125,22 @@ class DealSummaryOfferRow extends Component {
 }
 
 DealSummaryOfferRow.propTypes = {
-  id: React.PropTypes.string,
-  name: React.PropTypes.string,
-  category: React.PropTypes.string,
-  compatibilities: React.PropTypes.arrayOf(React.PropTypes.shape({
-    name: React.PropTypes.string
+  id: PropTypes.string,
+  name: PropTypes.string,
+  category: PropTypes.string,
+  compatibilities: PropTypes.arrayOf(PropTypes.shape({
+    name: PropTypes.string
   })),
-  requirements: React.PropTypes.string,
-  description: React.PropTypes.string,
-  value: React.PropTypes.string,
-  positive: React.PropTypes.bool,
-  type: React.PropTypes.string,
-  isSelected: React.PropTypes.bool,
-  readOnly: React.PropTypes.bool,
-  onSelect: React.PropTypes.func,
-  onExpand: React.PropTypes.func,
-  children: React.PropTypes.node
+  requirements: PropTypes.string,
+  description: PropTypes.string,
+  value: PropTypes.string,
+  positive: PropTypes.bool,
+  type: PropTypes.string,
+  isSelected: PropTypes.bool,
+  readOnly: PropTypes.bool,
+  onSelect: PropTypes.func,
+  onExpand: PropTypes.func,
+  children: PropTypes.node
 };
 
 export default DealSummaryOfferRow;

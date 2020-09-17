@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react';
+import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 import classes from './Dropdown.scss';
 
 function isString (value) {
@@ -7,9 +8,7 @@ function isString (value) {
 
 export class Dropdown extends Component {
   constructor (props) {
-    super(props: {
-      validationErrors: []
-    });
+    super(props);
 
     this.state = {
       isDirty: false,
@@ -18,7 +17,7 @@ export class Dropdown extends Component {
     };
   }
 
-  dropdownChange: Function = (event) => {
+  dropdownChange = (event) => {
     let valForValidate;
 
     this.dropdownBlur();
@@ -52,13 +51,13 @@ export class Dropdown extends Component {
     }
   };
 
-  dropdownBlur: Function = (event) => {
+  dropdownBlur = (event) => {
     if (this.props.onBlur) {
       this.props.onBlur(event);
     }
   };
 
-  toggleActive: Function = (active) => {
+  toggleActive = (active) => {
     if (active === 'active') {
       this.setState({ isActive: true });
     } else {
@@ -66,7 +65,7 @@ export class Dropdown extends Component {
     }
   };
 
-  toggleDirty: Function = (dirty) => {
+  toggleDirty = (dirty) => {
     if (dirty === 'dirty') {
       this.setState({ isDirty: true });
     } else {
@@ -74,13 +73,13 @@ export class Dropdown extends Component {
     }
   };
 
-  validate: Function = (newVal) => {
+  validate = (newVal) => {
     const isValid = this.props.validateFunction(newVal);
 
     return this.setState({ isValid });
   };
 
-  computeValue: Function = () => {
+  computeValue = () => {
     const valExists = this.props.selectedValue !== null && this.props.selectedValue !== undefined;
 
     if (valExists && isString(this.props.selectedValue)) {
@@ -131,7 +130,7 @@ Dropdown.defaultProps = {
 
 Dropdown.propTypes = {
   label: PropTypes.string,
-  placeholder: React.PropTypes.string,
+  placeholder: PropTypes.string,
   recordField: PropTypes.string,
   selectedValue: PropTypes.oneOfType([
     PropTypes.string,
@@ -140,8 +139,8 @@ Dropdown.propTypes = {
   onChange: PropTypes.func,
   onBlur: PropTypes.func,
   onFocus: PropTypes.func,
-  validateFunction: React.PropTypes.func,
-  theme: React.PropTypes.string,
+  validateFunction: PropTypes.func,
+  theme: PropTypes.string,
   options: PropTypes.arrayOf(PropTypes.oneOfType([
     PropTypes.shape({}),
     PropTypes.string
