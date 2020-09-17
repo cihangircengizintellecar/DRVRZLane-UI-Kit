@@ -1,0 +1,22 @@
+.OfferEM {
+
+  &Name {
+    padding-left: 2.5em;
+  }
+
+  &Requirements {
+    max-width: 445px;
+
+    span {
+      max-height: 36px;
+      display: block;
+      font-size: 16px !important;
+    }
+  }
+
+  &Button {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+}

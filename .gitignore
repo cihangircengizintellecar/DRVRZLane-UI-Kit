@@ -1,0 +1,16 @@
+.DS_STORE
+*.log
+
+node_modules
+
+dist
+coverage
+.nyc_output
+
+.idea/
+
+# vscode https://code.visualstudio.com/
+.vscode/*
+typings/*
+typings.json
+jsconfig.json

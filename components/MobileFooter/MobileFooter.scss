@@ -1,0 +1,132 @@
+@import '../../styles/base/colors';
+@import '../../styles/base/type';
+
+.MobileFooter {
+  z-index: 10;
+  cursor: pointer;
+  background: $white;
+  box-shadow: 0 0 6px 0 palette(gray,xx-light);
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  font-size: font-size(body,large);
+  width: 100%;
+  // transition: top .3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.hidden {
+  top: calc(100% - 74px);
+}
+
+.dealSummary {
+  background: $black;
+  text-align: center;
+  padding: 1.25em;
+
+  h2 {
+    font-size: font-size(title,x-large);
+    color: $white;
+    line-height: 1;
+    margin: 0;
+
+    img {
+      width: 16px;
+      vertical-align: middle;
+      margin-left: .75rem;
+
+      &.open {
+        transform: rotate(180deg);
+        margin-bottom: .75rem;
+      }
+    }
+  }
+}
+
+.carSummary {
+  background: palette(gray,x-light);
+  padding: 1em 1em 1em 2.5em;
+}
+
+.carName {
+  @include font-secondary;
+  font-size: font-size(title,x-large);
+  font-weight: font-weight(light);
+  letter-spacing: letter-spacing(wide);
+  color: palette(gray,dark);
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.carColor {
+  font-size: font-size(body,medium);
+  font-weight: font-weight(light);
+  line-height: line-height(title,large);
+  margin-bottom: .75em;
+  border-bottom: 1px solid palette(gray,light);
+}
+
+.carVin {
+  font-size: font-size(body,small);
+  font-weight: font-weight(heavy);
+  letter-spacing: letter-spacing(canyon);
+  margin-bottom: .75em;
+}
+
+.purchaseDetails {
+  overflow: auto;
+  max-height: 250px;
+  padding: 1em;
+
+  > div {
+    padding: .25em 0;
+  }
+}
+
+.total {
+  @include font-primary-semibold;
+  border-top: 1px solid palette(gray,light);
+}
+
+.finePrintSection {
+  background: palette(gray,x-light);
+  color: palette(gray,base);
+  font-size: font-size(body,default);
+  line-height: 1;
+  padding: 1em 2em;
+  font-style: italic;
+  border-radius: 0 0 5px 5px;
+}
+
+.flexRow {
+  display: flex;
+  letter-spacing: letter-spacing(medium);
+  overflow: auto;
+
+  p {
+    margin-bottom: .25em;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.flexRowItem {
+  flex: 1;
+  align-self: center;
+  text-align: left;
+  margin: 0;
+  padding: .25em;
+  border: 0;
+
+  &:nth-child(2) {
+    text-align: right;
+  }
+}
+
+.addOnHeader {
+  @include font-primary-semibold;
+  font-size: font-size(body,large);
+  letter-spacing: letter-spacing(medium);
+  padding: .75em 0;
+}

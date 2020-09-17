@@ -1,0 +1,22 @@
+@import '../../styles/base/type';
+@import '../../styles/base/colors';
+
+.button {
+  @include font-secondary;
+  cursor: default;
+  outline: 0;
+  background: palette(gray,x-light);
+  color: palette(gray,base);
+  display: inline-block;
+  font-size: 1em;
+  margin-right: 1em;
+  height: 2em;
+  width: 2em;
+  padding: 0;
+  border: 0;
+
+  &.current {
+    background: palette(red,base);
+    color: $white;
+  }
+}

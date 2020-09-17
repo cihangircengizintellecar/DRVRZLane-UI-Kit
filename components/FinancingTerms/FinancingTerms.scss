@@ -1,0 +1,82 @@
+@import '../../styles/utils/helpers';
+@import '../../styles/base/colors';
+@import '../../styles/base/type';
+@import '../../styles/utils/media-queries';
+
+.FinancingTerms {
+  cursor: pointer;
+  line-height: line-height(body,large);
+  max-width: 600px;
+  padding: 2rem 0 2rem 4em;
+  border: 2px solid palette(gray,light);
+  border-radius: 8px;
+  box-sizing: border-box;
+
+  &.selected {
+    border: 3px solid palette(blue,base);
+  }
+
+  .item {
+    flex: 1 0 auto;
+
+    div {
+      &:first-child {
+        color: palette(gray,dark);
+        font-size: 1.3rem;
+      }
+
+      &:nth-child(2) {
+        font-weight: font-weight(heavy);
+        font-size: 1.8rem;
+      }
+    }
+  }
+
+  @media only screen and (max-width: 920px) {
+    padding-left: 1em;
+
+    .item {
+      div {
+        &:first-child {
+          font-size: 1.1rem;
+        }
+
+        &:nth-child(2) {
+          font-size: 1.5rem;
+        }
+      }
+    }
+  }
+
+  @include gmq(portrait) {
+    width: auto;
+    line-height: 1.5;
+    padding: 1em 0 1em 1.25em;
+
+    .item {
+      div {
+        flex: 1 0 auto;
+
+        &:first-child {
+          color: $gray;
+          font-size: 1rem;
+        }
+
+        &:nth-child(2) {
+          font-weight: font-weight(regular);
+          font-size: 1.3rem;
+        }
+      }
+    }
+  }
+}
+
+.monthlyPay {
+  div:nth-child(2) {
+    color: $green;
+  }
+}
+
+.readOnly {
+  cursor: default;
+}

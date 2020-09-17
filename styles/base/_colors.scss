@@ -1,0 +1,36 @@
+// ===================================================
+// Fastlane Color Scheme
+// ===================================================
+$white: #FFF;
+$gray: #9B9B9B;
+$black: #303841;
+$red: #e11a21;
+$green: #3C9A43;
+
+// ===================================================
+// Color Palette Modifiers
+// ===================================================
+$palettes: (
+  gray: (
+    xx-light  : #F1F1F1,
+    x-light   : #F4F5F5,
+    light     : #E3E3E3,
+    base      : #C9C9C9,
+    dark      : #3A4750,
+    x-dark    : #363636
+  ),
+  red: (
+    light     : #F59999,
+    base      : #e11a21,
+    dark      : #CA2020
+  ),
+  blue: (
+    dark      : #303841,
+    base      : #3A9DFA
+  )
+);
+
+
+@function palette($palette: 'gray', $shade: 'base') {
+  @return map-get(map-get($palettes, $palette), $shade);
+}

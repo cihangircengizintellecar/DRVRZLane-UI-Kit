@@ -1,0 +1,40 @@
+@import '../../styles/base/colors';
+@import '../../styles/base/type';
+
+.RadioButtonGroup {
+  border: none;
+  outline: none;
+  margin: 0;
+  padding: 0;
+}
+
+.RadioButton {
+  font-size: font-size(body, large);
+  color: palette(gray, dark);
+
+  &__list {
+    text-align: left;
+    border: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  &__input {
+    opacity: 0;
+    position: absolute;
+  }
+
+  &__label {
+    padding-left: .5rem;
+    line-height: line-height();
+  }
+
+  &__circle {
+    color: $gray;
+    transition: trans-pop();
+  }
+}
+
+.checked {
+  color: palette(blue,base);
+}

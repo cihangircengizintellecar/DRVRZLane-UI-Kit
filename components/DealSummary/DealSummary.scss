@@ -1,0 +1,267 @@
+@import '../../styles/base/colors';
+@import '../../styles/base/type';
+@import '../../styles/utils/media-queries';
+
+.wrapper {
+  max-width: 66rem;
+  border: 1px solid palette(gray,light);
+  border-radius: 8px;
+}
+
+.flexRow {
+  display: flex;
+}
+
+.flexRowItem {
+  flex: 1;
+  align-self: center;
+
+  &:first-child {
+    flex: 0 1 auto;
+    margin-right: 3em;
+  }
+}
+
+.header {
+  background: palette(gray,x-light);
+  padding: 2em 3em;
+  border-radius: 8px 8px 0 0;
+}
+
+.manufacturerLogo {
+  max-width: 100px;
+}
+
+.carName {
+  @include font-secondary;
+  font-size: 2.5rem;
+  font-weight: font-weight(light);
+  letter-spacing: letter-spacing(wide);
+  color: palette(gray,dark);
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.carColor {
+  font-size: font-size(body,large);
+  font-weight: font-weight(light);
+  line-height: line-height(title,large);
+  margin-top: -.5rem;
+}
+
+.carVin {
+  font-family: 'AauxNext-SemiBold', sans-serif;
+  font-size: font-size(body,small);
+  letter-spacing: .2rem;
+  margin-bottom: .75em;
+  border-top: 1px solid #e3e3e3;
+  padding-top: .75rem;
+}
+
+.PurchaseInfoFinancingTerms {
+  display: flex;
+  background: #646a71;
+  color: $white;
+  padding: 1.25em 2em;
+
+  div {
+    flex: 1;
+  }
+
+  span {
+    font-size: font-size(body,large);
+
+    &:first-child {
+      display: block;
+      @include font-secondary;
+      line-height: line-height(body,large);
+      text-transform: uppercase;
+      letter-spacing: letter-spacing(wide);
+    }
+  }
+
+  + .lineItems {
+    padding-top: 0;
+  }
+}
+
+.tablesWrapper {
+  padding: 1em 3.5em;
+
+  table,
+  tr,
+  td {
+    border: 0;
+  }
+
+  tr {
+    &:hover {
+      background: none;
+    }
+  }
+
+  td {
+    vertical-align: top;
+    padding: 1em;
+
+    &:first-child {
+      @include font-primary-semibold;
+      color: palette(gray,dark);
+      padding-left: inherit;
+      margin: 0;
+      width: 214px;
+
+      @include gmq(portrait) {
+        width: 50%;
+      }
+    }
+
+    @include gmq(portrait) {
+      &:nth-child(2) {
+        padding-right: 0;
+      }
+    }
+
+    &:last-child {
+      // padding-left: 2em;
+      padding-right: 1em;
+    }
+  }
+
+  @include gmq(portrait) {
+    padding-left: 2em;
+    padding-right: 2em;
+  }
+}
+
+.purchaseDetails {
+  tr {
+    &:last-child {
+      td {
+        @include font-primary-bold;
+
+        &:first-child {
+          @include gmq(portrait) {
+            display: block;
+          }
+        }
+
+        // right align totals
+        &:nth-child(2) {
+          text-align: right;
+        }
+      }
+    }
+  }
+
+  &.isPayingCash {
+    // padding bottom on last row before total
+    tr:nth-last-child(2) {
+      td {
+        padding-bottom: 2em;
+      }
+    }
+
+    // border on top and bottom of total
+    tr:last-child {
+      td {
+        border-top: 1px solid palette(gray,x-light);
+      }
+    }
+  }
+
+  &.isFinancing {
+    // border and padding above total loan amount
+    tr:nth-last-child(2) {
+      td {
+        font-size: 1.55rem;
+        border-top: 1px solid palette(gray,x-light);
+        padding-top: 2em;
+        padding-bottom: 0;
+      }
+    }
+
+    // border beneath total monthly payment
+    tr:last-child {
+      font-size: 1.55rem;
+      td {
+        padding-top: 1.5em;
+        padding-bottom: 1.75em;
+      }
+      td:nth-child(3) {
+        @include font-primary;
+        font-size: 1.25rem;
+        padding-top: 2.4rem;
+
+        @include gmq(portrait) {
+          display: none;
+        }
+      }
+    }
+
+    // right align total amounts
+    tr:nth-last-child(2) {
+      td:nth-child(2) {
+        text-align: right;
+      }
+    }
+  }
+
+  &.isLeasing {
+    // border above total
+    tr:last-child {
+      td {
+        border-top: 1px solid palette(gray,x-light);
+      }
+
+      td:nth-child(3) {
+        @include font-primary;
+      }
+    }
+  }
+}
+
+.addOnsWithoutValuesTable {
+  border-top: 1px solid palette(gray,x-light);
+  padding-top: .8rem;
+
+  tr {
+    &:first-child {
+      td {
+        padding-top: 2em;
+      }
+    }
+
+    &:last-child {
+      padding-bottom: 0;
+    }
+
+    td {
+      font-size: 1.55rem;
+
+      @include gmq(portrait) {
+        &:first-child {
+          display: block;
+        }
+      }
+    }
+  }
+
+  h2 {
+    display: inline-block;
+    @include font-primary-semibold;
+    font-size: 1.4rem;
+    letter-spacing: 0;
+    float: right;
+  }
+}
+
+.showOnMobile {
+  display: none;
+}
+
+@include gmq(portrait) {
+  .hideOnMobile {
+    display: none;
+  }
+}

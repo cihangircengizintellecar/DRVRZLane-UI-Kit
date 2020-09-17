@@ -1,0 +1,98 @@
+@import 'colors';
+@import 'fonts';
+@import 'type';
+@import '../utils/media-queries';
+
+button,
+.faux__button {
+  display: inline-block;
+  -webkit-appearance: none;
+  user-select: none;
+  cursor: pointer;
+  outline: 0;
+  padding: .45em 1.7em;
+  border-radius: 50px;
+  transition: all .1s ease-in-out;
+
+  &:focus {
+    outline: 0;
+    box-shadow: none;
+  }
+
+  &:disabled,
+  &[disabled='true'],
+  &:disabled:hover,
+  &[disabled='true']:hover {
+    cursor: default;
+    background: palette(gray,light);
+    color: palette(gray,base);
+    border-color: palette(gray,light);
+  }
+
+  &__primary {
+    background: $green;
+    color: $white;
+    border: 1px solid $green;
+
+    &:active,
+    &:hover {
+      background: darken($green, 10%);
+      color: $white;
+    }
+  }
+
+  &__secondary {
+    background: palette(red,base);
+    color: $white;
+    border: 1px solid palette(red,base);
+
+    &:active,
+    &:hover {
+      background: palette(red,dark);
+      color: $white;
+      border-color: palette(red,dark);
+    }
+  }
+
+  &__dark {
+    background: palette(gray,dark);
+    color: $white;
+    border: 1px solid palette(gray,dark);
+
+    &:active,
+    &:hover {
+      background: palette(gray,x-dark);
+    }
+  }
+
+  &__inverted {
+    background: $white !important;
+    color: palette(red,base) !important;
+    border: 1px solid palette(red,base) !important;
+
+    &:active,
+    &:hover {
+      background: palette(gray,x-light) !important;
+    }
+  }
+
+  &__inverted__dark {
+    @include font-primary;
+    text-transform: none;
+    font-weight: font-weight(regular);
+    letter-spacing: letter-spacing(default);
+    background: $white;
+    color: palette(gray,dark);
+    border: 1px solid palette(gray,dark);
+
+    &:active,
+    &:hover {
+      background: palette(gray,x-light);
+      color: palette(gray,dark);
+    }
+  }
+
+  @include gmq(portrait) {
+    padding: .6em 1.7em;
+  }
+}

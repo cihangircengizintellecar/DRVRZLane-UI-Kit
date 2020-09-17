@@ -1,0 +1,63 @@
+@import '../../styles/base/colors';
+@import '../../styles/base/type';
+@import '../../styles/utils/media-queries';
+
+.payment {
+  font-size: 5rem;
+  margin: .5rem;
+  text-align: center;
+
+  @include gmq(portable) {
+    font-size: 3rem;
+  }
+
+  span {
+    font-size: 3rem;
+    position: relative;
+    top: -1.2rem;
+
+    @include gmq(portable) {
+      font-size: 2rem;
+      top: -.6rem;
+    }
+
+    &.perMonth {
+      font-size: 2.5rem;
+      top: 0;
+
+      @include gmq(portable) {
+        font-size: 2rem;
+      }
+    }
+  }
+}
+
+.wrapper {
+  width: 420px;
+  border: 1px solid palette(gray,light);
+  border-radius: 5px;
+  margin-top: 1rem;
+
+  @include gmq(portable) {
+    width: 272px;
+  }
+}
+
+.header {
+  background: palette(blue,dark);
+  padding: .75em 2em;
+}
+
+.headerText {
+  color: $white;
+  margin-bottom: 0;
+}
+
+.calculatorWrapper {
+  text-align: center;
+  padding: 0 5rem 1rem;
+
+  @include gmq(portable) {
+    padding: 0 1.5rem 1rem;
+  }
+}

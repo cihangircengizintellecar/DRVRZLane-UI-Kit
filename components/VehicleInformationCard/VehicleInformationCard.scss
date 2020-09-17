@@ -1,0 +1,83 @@
+@import '../../styles/utils/helpers';
+@import '../../styles/base/colors';
+@import '../../styles/base/type';
+
+.VehicleInformationCard {
+  cursor: pointer;
+  width: 420px;
+  border: 1px solid palette(gray,light);
+  border-radius: 5px;
+
+  &.selected {
+    box-shadow: 0px 0px 1px 4px palette(blue,base);
+  }
+
+  button {
+    margin-bottom: 0!important;
+  }
+}
+
+.header {
+  background: palette(blue,dark);
+  padding: 1em 2em;
+}
+
+.headerText {
+  color: $white;
+}
+
+.carSummary {
+  flex: 2;
+  background: $white;
+  padding: 2em;
+  border-radius: 5px;
+
+  img {
+    width: 100px;
+  }
+}
+
+.manufacturerLogoWrapper {
+  align-self: center;
+}
+
+.carDetails {
+  flex: 2;
+  color: palette(blue,dark);
+}
+
+.yearAndName {
+  @include font-secondary;
+  font-size: font-size(title,x-large);
+  font-weight: font-weight(light);
+  letter-spacing: letter-spacing(wide);
+  color: palette(gray,dark);
+  text-transform: uppercase;
+}
+
+.color {
+  font-size: font-size(body,medium);
+  font-weight: font-weight(light);
+  line-height: line-height(title,large);
+  margin-bottom: .75em;
+  border-bottom: 1px solid palette(gray,light);
+}
+
+.vin {
+  font-size: font-size(body,small);
+  font-weight: font-weight(heavy);
+  letter-spacing: letter-spacing(canyon);
+  margin-bottom: .75em;
+}
+
+.condition {
+  font-size: font-size(body,small);
+  font-weight: font-weight(heavy);
+  color: $green;
+}
+
+.price {
+  font-size: font-size(body,small);
+  font-weight: font-weight(heavy);
+  margin-top: .75em;
+}

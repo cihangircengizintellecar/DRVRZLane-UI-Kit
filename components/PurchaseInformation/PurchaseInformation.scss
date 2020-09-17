@@ -1,0 +1,177 @@
+@import '../../styles/base/colors';
+@import '../../styles/base/type';
+@import '../../styles/utils/media-queries';
+
+.wrapper {
+  width: 420px;
+  border: 1px solid palette(gray,light);
+  border-radius: 5px;
+
+  @include gmq(portable) {
+    width: 272px;
+  }
+}
+
+.PurchaseInfoFlexRow {
+  background: $white;
+}
+
+.header {
+  background: palette(blue,dark);
+  padding: .8em 2em .7em;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+
+  @include gmq(portable) {
+    padding: .7em 2em .6em 2em;
+  }
+}
+
+.headerText {
+  color: $white;
+  margin-bottom: 0;
+  font-size: 2.15rem;
+
+  @include gmq(portable) {
+    font-size: 1.8rem;
+  }
+}
+
+.carSummary {
+  display: flex;
+  flex: 2;
+	background-color: rgba(48,56,65,0.05);
+  padding: 2em;
+
+  @include gmq(portable) {
+    padding: 2em 2em 1.7em .7em;
+  }
+
+  img {
+    width: 100px;
+    @include gmq(portable) {
+      display: none;
+    }
+  }
+}
+
+.manufacturerLogoWrapper {
+  align-self: center;
+  margin-right: 1.5em;
+}
+
+.carDetails {
+  flex: 2;
+  color: palette(blue,dark);
+}
+
+.carName {
+  @include font-secondary;
+  font-size: 2.5rem;
+  font-weight: font-weight(light);
+  letter-spacing: letter-spacing(wide);
+  color: #303841;
+  text-transform: uppercase;
+  line-height: 1;
+
+  @include gmq(portable) {
+    font-size: 1.8rem;
+  }
+}
+
+.carColor {
+  color: #303841;
+  font-size: font-size(body,medium);
+  font-weight: font-weight(light);
+  line-height: line-height(title,large);
+}
+
+.carVin {
+  font-family: "AauxNext-regular", sans-serif;
+  font-size: font-size(body,small);
+  color: #303841;
+  letter-spacing: .2rem;
+  margin-bottom: .75em;
+  border-top: 1px solid #e3e3e3;
+  padding-top: .75rem;
+}
+
+.PurchaseInfoFinancingTerms {
+  display: flex;
+  background: #646a71;
+  color: $white;
+  margin-bottom: 1.2em;
+  padding: 1.25em 2em;
+
+  @include gmq(portable) {
+    padding: .75em 1.25em;
+  }
+
+  div {
+    flex: 1;
+
+    @include gmq(portable) {
+      &:first-child {
+        flex-basis: 15%;
+      }
+
+      &:nth-child(2) {
+        flex-basis: 10%;
+      }
+    }
+  }
+
+  span {
+    font-size: font-size(body,large);
+
+    @include gmq(portable) {
+      font-size: 1rem;
+    }
+
+    &:first-child {
+      display: block;
+      @include font-secondary;
+      line-height: line-height(body,large);
+      text-transform: uppercase;
+      letter-spacing: letter-spacing(wide);
+
+      @include gmq(portable) {
+        letter-spacing: .1rem;
+        font-size: 1.1rem;
+      }
+    }
+  }
+
+  + .lineItems {
+    padding-top: 0;
+  }
+}
+
+.lineItems {
+  padding: 1.45em 1.45em 0;
+}
+
+.finePrintSection {
+  background: palette(gray,x-light);
+  color: #9B9B9B;
+  padding: 1.2em 2em 1em;
+  font-style: italic;
+  border-radius: 0 0 5px 5px;
+
+  @include gmq(portable) {
+    padding: 1.2em 1.3em 1em 1.3em;
+    font-size: .9rem;
+  }
+}
+
+.addOnHeader {
+  @include font-primary-semibold;
+  font-size: font-size(body,large);
+  padding-top: 1.75em;
+
+  @include gmq(portable) {
+    font-size: 1.15rem;
+    padding-top: 1.25em;
+    padding-bottom: .25em;
+  }
+}

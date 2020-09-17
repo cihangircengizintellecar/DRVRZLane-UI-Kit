@@ -1,0 +1,37 @@
+// Grid -------------
+
+$breakpoints: (
+  'palm' '(max-width: 480px)',
+  'portrait' '(max-width: 768px)',
+  'portable' '(max-width: 1124px)',
+  'ipad' '(min-device-width: 768px) and (max-device-width: 1124px) and (orientation: landscape)',
+  'lap' '(min-width: 481px)',
+  'mid' '(min-width: 769px)',
+  'desk' '(min-width: 1125px)',
+  'desk-lg' '(min-width: 1200px)',
+  'desk-xl' '(min-width: 1440px)',
+  'jumbo' '(min-width: 1600px)',
+  'massive' '(min-width: 1900px)'
+);
+
+
+@mixin gmq($media-query) {
+  $breakpoint-found: false;
+
+  @each $breakpoint in $breakpoints {
+    $name: nth($breakpoint, 1);
+    $declaration: nth($breakpoint, 2);
+
+    @if $media-query == $name and $declaration {
+      $breakpoint-found: true;
+
+      @media only screen and #{$declaration} {
+        @content;
+      }
+    }
+  }
+
+  @if $breakpoint-found == false {
+    @warn "Breakpoint ‘#{$media-query}’ does not exist"
+  }
+}

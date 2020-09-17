@@ -1,0 +1,21 @@
+@import '../../styles/base/colors';
+
+.wrapper {
+  width: 420px;
+  border: 1px solid palette(gray,light);
+  border-radius: 5px;
+}
+
+.header {
+  background: palette(blue,dark);
+  padding: 1em 2em;
+}
+
+.headerText {
+  color: $white;
+}
+
+.lineItems {
+  padding: 2em 2em 1em 2em;
+}
+

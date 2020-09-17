@@ -1,0 +1,11 @@
+@import 'type';
+
+fieldset {
+  margin: 0 0 1.5em 0;
+  padding: 0;
+  border: 0;
+
+  label {
+    font-weight: font-weight(regular);
+  }
+}

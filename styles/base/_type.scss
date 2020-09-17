@@ -1,0 +1,116 @@
+@import 'colors';
+@import 'fonts';
+
+@import '../utils/media-queries';
+
+$size-base: 1rem;
+$font-family--primary: 'AauxNext-Regular';
+$font-family--primary--semi-bold: 'AauxNext-SemiBold';
+$font-family--primary--bold: 'AauxNext-Bold';
+$font-family--secondary: 'Tungsten-Medium';
+
+@mixin font-primary() {
+  font-family: $font-family--primary, sans-serif;
+}
+
+@mixin font-secondary() {
+  font-family: $font-family--secondary, sans-serif;
+}
+
+@mixin font-primary-semibold() {
+  font-family: $font-family--primary--semi-bold, sans-serif;
+}
+
+@mixin font-primary-bold() {
+  font-family: $font-family--primary--bold, sans-serif;
+  font-weight: 500;
+}
+
+// ===================================================
+// Font Sizes
+// ===================================================
+$font-sizes: (
+  body: (
+    xx-small: 0.625rem,
+    x-small: 0.75rem,
+    small: 0.875rem,
+    default: 1rem,
+    medium: 1.125rem,
+    large: 1.25rem,
+    x-large: 1.5rem,
+    xx-large: 1.875rem
+  ),
+
+  title: (
+    x-small: 12px,
+    small: 16px,
+    default: 18px,
+    large: 20px,
+    x-large: 30px,
+    xx-large: 40px,
+    xxx-large: 45px,
+    jumbo: 60px
+  )
+);
+
+@function font-size($font-size: 'body', $size: 'default') {
+  @return map-get(map-get($font-sizes, $font-size), $size);
+}
+
+
+// ===================================================
+// Line Heights
+// ===================================================
+$line-heights: (
+  body: (
+    x-small: .75,
+    small: 1.2,
+    default: 1.4,
+    large: 1.875,
+    x-large: 2
+  ),
+
+  title: (
+    x-small: 1,
+    small: 1.1,
+    default: 1.5,
+    medium: 1.875,
+    large: 2,
+   )
+);
+
+@function line-height($line-height: 'body', $size: 'default') {
+  @return map-get(map-get($line-heights, $line-height), $size);
+}
+
+
+// ===================================================
+// Font Weights
+// ===================================================
+$font-weights: (
+  thin: 100,
+  light: 300,
+  regular: 400,
+  medium: 500,
+  heavy: 600,
+  x-heavy: 700
+)!default;
+
+@function font-weight($weight: 'regular') {
+  @return map-get($font-weights, $weight);
+}
+
+// ===================================================
+// Letter Spacing
+// ===================================================
+$letter-spacings: (
+  default: 0rem,
+  thin: 0.03rem,
+  medium: .09rem,
+  wide: 0.15rem,
+  canyon: 0.3rem
+)!default;
+
+@function letter-spacing($width: 0rem) {
+  @return map-get($letter-spacings, $width);
+}

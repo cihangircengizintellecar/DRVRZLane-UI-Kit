@@ -1,0 +1,52 @@
+@import '../../styles/base/colors';
+@import '../../styles/base/type';
+
+.WarrantyBox {
+  cursor: pointer;
+  color: palette(gray,dark);
+  text-align: center;
+  width: 446px;
+  border: 2px solid palette(gray,light);
+  border-radius: 5px;
+
+  &.selected {
+    border-color: palette(blue,base);
+  }
+
+  &.readOnly {
+    cursor: default;
+  }
+}
+
+.Header {
+  background: #FBFBFB;
+  padding: 1.5em;
+}
+
+.Content {
+  padding: 1.5em;
+}
+
+.Package {
+  text-transform: uppercase;
+  letter-spacing: letter-spacing(medium);
+  font-size: font-size(title,default);
+  font-weight: font-weight(heavy);
+}
+
+.Name {
+  @include font-secondary;
+  font-size: font-size(title,x-large);
+  letter-spacing: letter-spacing(medium);
+  text-transform: uppercase;
+}
+
+.Description,
+.Value {
+  font-size: font-size(title,large);
+}
+
+.Value {
+  color: $gray;
+  margin-top: .5em;
+}

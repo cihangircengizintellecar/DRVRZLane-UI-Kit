@@ -1,0 +1,81 @@
+@import '../../styles/base/colors';
+@import '../../styles/base/type';
+@import '../../styles/utils/media-queries';
+
+.wrapper {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  // max-width: 23em;
+  margin-bottom: 1em;
+  font-size: 1.28rem;
+
+  @include gmq(portrait) {
+    max-width: auto;
+    width: 100%;
+  }
+}
+
+.label {
+  color: $black;
+  display: block;
+  @include font-primary-semibold;
+  font-weight: 400; // to override bootstrap's font weight of 700
+  margin-bottom: .8rem;
+  text-align: left;
+  padding-left: .17em;
+}
+
+.input {
+  display: block;
+  width: 100%;
+  max-width: 19.7em;
+
+  @include font-primary;
+  font-size: 1.33rem;
+  font-weight: 100;
+  color: $black;
+
+  outline: none;
+  padding: 1rem 1.42rem;
+  border: 1px solid palette(gray,light);
+  border-radius: 5px;
+
+  &:focus {
+    box-shadow: #303841 0 0 0 2px;
+  }
+}
+
+.error {
+  input, textarea {
+    color: palette(red,base);
+    font-weight: font-weight(medium);
+    box-shadow: palette(red,base) 0 0 0 1px;
+    border: 1px solid palette(red,base);
+    border-radius: 5px;
+
+    &:focus {
+      box-shadow: rgba(palette(red,base), .4) 0 0 0 2px;
+    }
+  }
+}
+
+.errorMessage {
+  position: absolute;
+  margin-top: .5em;
+  background: $white;
+  color: palette(red,base);
+  text-align: left;
+  letter-spacing: letter-spacing(medium);
+  font-size: 1rem;
+  letter-spacing: 0;
+  margin-left: 4px;
+}
+
+.size {
+  &__large {
+    textarea {
+      height: 161px;
+    }
+  }
+}

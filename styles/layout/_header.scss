@@ -1,0 +1,9 @@
+@import '../utils/media-queries';
+
+header {
+  padding: 1em 2em;
+
+  @include gmq(portrait) {
+    padding: .85em .5em;
+  }
+}

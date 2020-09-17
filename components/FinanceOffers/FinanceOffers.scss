@@ -1,0 +1,109 @@
+@import '../../styles/utils/media-queries';
+
+.OfferTable {
+  font-size: 1.2em;
+
+  .OfferTableRow {
+    div {
+      display: inline-block;
+      vertical-align: top;
+    }
+
+    .term {
+      font-size: 2em;
+      padding-top: 1.45em;
+    }
+
+    .termsColumn {
+      width: 10%;
+      text-align: center;
+    }
+
+    .financingColumn, .leasingColumn {
+      width: 45%;
+      text-align: center;
+      
+      div {
+        display: block;
+      }
+    }
+  }
+
+  .OfferButton {
+    height: 100px;
+
+    box-sizing: border-box;
+    
+    margin-top: 1em;
+    margin-left: 1em;
+    margin-right: 1em;
+
+    border: 3px solid #e3e3e3;
+    border-radius: 5px;
+    padding: 1em .3em;
+    text-align: center;
+
+    &.OfferSelected {
+      border: 3px solid #3a9dfa;
+    }
+
+    .Disclaimer {
+      font-size: .7em;
+      margin-top: .45em;
+    }
+  
+    .Price {
+      font-size: 1.4em;
+
+      .PriceNumber {
+        color: #3c9a43;        
+        font-size: 1.4em;
+      }
+    }
+  }
+
+  .OfferTableRowHeader {
+    font-weight: 800;
+  }
+}
+
+// .leasingColumn {
+//   .OfferButton {
+//     padding: 1em .3em .3em;
+//   }
+// }
+
+.wideColumn {
+  width: 90%!important;
+}
+
+@include gmq(portrait) {
+  .OfferTable {
+    font-size: 1em;
+
+    .OfferButton {
+      height: 78px;
+    }  
+  }
+}
+
+@include gmq(palm) {
+  .OfferTable {
+    .OfferButton {
+      height: 94px;
+      margin-left: .5em;
+      margin-right: .5em;
+
+      .Price {
+        font-size: 1.2em;
+      }
+    }
+
+    .wideColumn {
+      .OfferButton {
+        font-size: 1.3em;
+      }
+    }  
+  }
+
+}

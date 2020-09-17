@@ -1,0 +1,16 @@
+.SignaturePadWrapper {
+  margin: 0 auto;
+  position: relative;
+
+  canvas {
+    border-bottom: 1px solid #ccc;
+  }
+}
+
+.BtnContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1rem;
+}

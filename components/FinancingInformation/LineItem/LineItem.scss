@@ -1,0 +1,27 @@
+@import '../../../styles/base/colors';
+@import '../../../styles/base/type';
+
+.lineItem {
+  font-size: font-size(body,large);
+  padding: 1em 0;
+
+  &:first-child {
+    padding-top: 0;
+  }
+
+  span {
+    color: palette(blue,dark);
+    vertical-align: sub;
+    color: palette(blue,dark);
+    letter-spacing: letter-spacing(medium);
+    display: inline-block;
+
+    &:nth-child(2) {
+      float: right;
+    }
+  }
+}
+
+.blank {
+  color: palette(gray,light);
+}

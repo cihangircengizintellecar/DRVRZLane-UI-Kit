@@ -1,0 +1,29 @@
+{
+  "parser": "babel-eslint",
+  "extends": "@dialexa/eslint-config-dialexa/react",
+  "plugins": [
+    "babel",
+    "react",
+    "promise"
+  ],
+  "env": {
+    "browser": true
+  },
+  "globals": {
+    "__DEV__": false,
+    "__PROD__": false,
+    "__DEBUG__": false,
+    "__COVERAGE__": false,
+    "__BASENAME__": false,
+    "expect" : false,
+    "should" : false,
+    "sinon"  : false,
+    "hook"  : false 
+  },
+  "rules": {
+    "react/no-unused-prop-types": "off",
+    "semi" : [2, "always"],
+    "flow-vars/define-flow-type": 1,
+    "flow-vars/use-flow-type": 1
+  }
+}

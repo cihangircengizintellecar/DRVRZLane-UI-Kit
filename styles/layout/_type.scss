@@ -1,0 +1,146 @@
+// ===================================================
+// Body
+// ===================================================
+body {
+  @include font-primary;
+  font-weight: font-weight(regular);
+}
+
+
+// ===================================================
+// Headers
+// ===================================================
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @include font-secondary;
+  margin: 0;
+  font-weight: font-weight(light);
+  line-height: line-height(body,default);
+  color: palette(gray,dark);
+}
+
+h1 {
+  font-size: $size-base * 3; // 48px
+  letter-spacing: letter-spacing(wide);
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: $size-base * 2.5; // 36px
+  letter-spacing: letter-spacing(wide);
+  text-transform: uppercase;
+
+  @include gmq(portrait) {
+    font-size: $size-base * 1.5;
+    margin-bottom: .6rem;
+  }
+}
+
+h3 {
+  font-size: $size-base * 1.75; // 32px
+  letter-spacing: letter-spacing(wide);
+}
+
+h4 {
+  font-size: $size-base * 1.5; // 24px
+  letter-spacing: letter-spacing(medium);
+}
+
+h5 {
+  @include font-primary;
+  font-size: $size-base * 1.25; // 20px
+  margin-bottom: 1.25rem;
+  letter-spacing: letter-spacing(medium);
+}
+
+h6 {
+  font-size: $size-base * 1.125; // 18px
+}
+
+
+// ===================================================
+// Paragraphs
+// ===================================================
+p {
+  @include font-primary;
+  font-size: 1.3rem;
+  font-weight: font-weight(thin);
+  line-height: line-height(body, default);
+  color: #3A4750;
+  line-height: 26px;
+}
+
+
+// ===================================================
+// Links
+// ===================================================
+a {
+  font-size: font-size(body, default);
+  color: palette(red, base);
+  text-decoration: none;
+  transition: all .1s ease-in-out;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    color: darken(palette(red, base), .15);
+    text-decoration: none;
+  }
+
+  &:active,
+  &:hover {
+    outline: 0;
+  }
+
+  &:focus {
+    outline: 0
+  }
+}
+
+.faux-link {
+  @extend a;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+
+// ===================================================
+// Content Block Elements
+// ===================================================
+dl,
+menu,
+ol,
+ul,
+p,
+pre {
+  margin: 0 0 $size-base;
+}
+
+
+// ===================================================
+// Buttons
+// ===================================================
+button,
+.faux__button {
+  @include font-secondary;
+  font-weight: font-weight(thin);
+  font-size: font-size(body,large);
+  letter-spacing: letter-spacing(canyon);
+  text-transform: uppercase;
+}
+
+
+// ===================================================
+// Lists
+// ===================================================
+menu,
+ol,
+ul {
+  padding: 0 0 0 $size-base * 2;
+}

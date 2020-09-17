@@ -1,0 +1,43 @@
+@import '../../styles/base/colors';
+@import '../../styles/base/type';
+@import '../../styles/utils/media-queries';
+
+.Table {
+  color: palette(blue,dark);
+  border: 1px solid palette(gray,light);
+  border-radius: 5px;
+  max-width: 960px;
+  width: 100%;
+}
+
+.Row {
+  display: flex;
+  box-sizing: border-box;
+  padding: 1em 0 1em 2em;
+
+  font-size: 1.2em;
+  border-bottom: 1px solid palette(gray,light);
+  
+  &:last-child {
+    border-bottom: 0;
+  }
+  
+  div {
+    flex-grow: 1;
+    flex-basis: 10px;
+  }
+}
+
+.RowHeader {
+  background-color: #fbfbfb;    
+  cursor: default;
+  @include font-secondary;
+  text-overflow: inherit;
+  text-transform: uppercase;
+  font-size: font-size(title,large);
+  font-weight: font-weight(light);
+  letter-spacing: letter-spacing(wide);
+  padding: 1em 0 1em 2em;
+  border-bottom: 1px solid palette(gray,light);
+  color: #303841;
+}

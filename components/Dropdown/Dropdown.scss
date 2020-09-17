@@ -1,0 +1,84 @@
+@import '../../styles/base/colors';
+@import '../../styles/base/type';
+@import '../../styles/utils/media-queries';
+
+.wrapper {
+  position: relative;
+  display: inline-block;
+  // max-width: 23em;
+  width: 100%;
+  margin-bottom: 1em;
+  font-size: 1.28rem;
+
+  @include gmq(portrait) {
+    max-width: auto;
+    width: 100%;
+  }
+}
+
+.label {
+  display: block;
+  @include font-primary-semibold;
+  margin-bottom: .8rem;
+  color: #303841;
+  text-align: left;
+  padding-left: .17em;
+}
+
+.Dropdown {
+  display: block;
+  outline: 0;
+  background: $white;
+  color: $black;
+  font-size: 1.33rem;
+  font-weight: 100;
+  letter-spacing: 1px;
+  height: 51px;
+  width: 100%;
+  padding: 1rem 4rem 1rem 1.42rem;
+  border: 1px solid palette(gray,light);
+  @include font-primary;
+  border-radius: 5px;
+  appearance: none;
+  background-image: url('../../assets/img/chevron_down.svg');
+  background-repeat: no-repeat;
+  background-position: right 25px center;
+  background-color: white;
+  max-width: 20.55em;
+
+  &:disabled,
+  &[disabled='true'] {
+    cursor: default;
+    background: $white;
+    color: palette(gray,base);
+    border-color: palette(gray,light);
+  }
+
+  &--size-large {
+    font-size: 1.2em;
+  }
+
+  @include gmq(portrait) {
+    width: 100%;
+  }
+}
+
+.error {
+  select {
+    color: palette(red,base);
+    font-weight: font-weight(medium);
+    border: 3px solid palette(red,base);
+    border-radius: 10px;
+  }
+}
+
+.errorMessage {
+  margin-top: .5em;
+  background: $white;
+  color: palette(red,base);
+  text-align: left;
+  letter-spacing: letter-spacing(medium);
+  font-size: 1rem;
+  letter-spacing: 0;
+  margin-left: 4px;
+}

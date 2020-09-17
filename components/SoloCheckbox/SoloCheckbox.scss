@@ -1,0 +1,61 @@
+@import '../../styles/base/type';
+@import '../../styles/base/colors';
+
+.CheckboxLabel {
+  display: flex;
+  justify-content: flex-start;
+  line-height: 1.5;
+  font-family: 'AauxNext-SemiBold',sans-serif;
+  font-size: 1.22rem;
+  color: $black;
+  position: relative;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.CheckboxInput {
+  opacity: 0;
+  margin: 0;
+  position: absolute;
+
+  &:focus {
+    & + .Icon {
+      box-shadow: rgba(#2D9BE3, .4) 0 0 0 2px;
+    }
+  }
+}
+
+.svgWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 24px;
+}
+
+.CheckMark {
+  cursor: pointer;
+  line-height: 1.5;
+  width: 26px;
+  height: 26px;
+  border: 1px solid #303841;
+  border-radius: 4px;
+  margin-right: 1rem;
+
+  position: relative;
+  top: -3px;
+
+  svg {
+    transform: scale(0);
+    width: 19px;
+    height: 19px;
+    padding-top: 3px;
+    // transition: .1s ease;
+  }
+}
+
+.CheckMarkChecked {
+  svg {
+    transform: scale(1);
+  }
+}

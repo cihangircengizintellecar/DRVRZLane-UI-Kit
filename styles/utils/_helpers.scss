@@ -1,0 +1,72 @@
+// Layout
+//====================================================
+.flex__row {
+  display: flex;
+
+  &__item {
+    flex: 1;
+  }
+
+  &.dir-column {
+    flex-direction: column;
+  }
+
+  &.align-start {
+    align-items: flex-start;
+  }
+
+  &.align-end {
+    align-items: flex-end;
+  }
+
+  &.justify-start {
+    justify-content: flex-start;
+  }
+
+  &.justify-end {
+    justify-content: flex-end;
+  }
+
+  &.align-center {
+    align-items: center;
+  }
+
+  &.justify-center {
+    justify-content: center;
+  }
+
+  &.justify-between {
+    justify-content: space-between;
+  }
+
+  &.justify-around {
+    justify-content: space-around;
+  }
+
+  &.flex-wrap {
+    flex-wrap: wrap;
+  }
+}
+
+
+
+// Type
+//====================================================
+.text {
+  &__italic {
+    font-style: italic;
+  }
+
+  &__lower {
+    text-transform: lowercase;
+  }
+
+  &__upper {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  &__center {
+    text-align: center;
+  }
+}

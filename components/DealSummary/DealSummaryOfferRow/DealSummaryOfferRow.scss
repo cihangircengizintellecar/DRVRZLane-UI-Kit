@@ -1,0 +1,119 @@
+@import '../../../styles/base/colors';
+@import '../../../styles/base/type';
+@import '../../../styles/utils/media-queries';
+
+tr {
+  &:hover {
+    background: $white;
+  }
+
+  td {
+    vertical-align: middle;
+    border-bottom: 1px solid palette(gray,light);
+
+    &:nth-child(2) {
+      padding-left: 0;
+    }
+
+    span {
+      font-size: font-size(body,large);
+    }
+
+    @include gmq(portrait) {
+      &:nth-child(3) {
+        padding-right: 0;
+        text-align: right;
+      }
+    }
+  }
+
+  &:last-child {
+    td {
+      border: 0;
+    }
+  }
+}
+
+.checkboxWrapper {
+  flex: 0 1 auto;
+  align-self: center;
+  margin-right: 2em;
+
+  @include gmq(portrait) {
+    margin-right: 1em;
+  }
+}
+
+.checkbox {
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  border: 1px solid palette(gray,light);
+  border-radius: 5px;
+
+  img {
+    margin: 1px 0 0 4px;
+  }
+
+  @include gmq(portrait) {
+    display: none;
+  }
+}
+
+.OfferName h5 {
+  @include font-primary-semibold;
+  color: $black;
+  font-size: 1.55rem;
+  letter-spacing: letter-spacing(default);
+  margin: 0 !important;
+  min-width: 100px;
+
+  @include gmq(portrait) {
+    text-align: left;
+  }
+}
+
+.OfferValue h5 {
+  color: $black;
+  font-size: 1.55rem;
+  letter-spacing: letter-spacing(default);
+  text-align: right;
+  margin: 0 !important;
+}
+
+.OfferRequirements {
+  color: $gray;
+  font-size: font-size(body,medium);
+  margin-top: 4px;
+
+  span {
+    color: #3A4750;
+    line-height: 21px;
+    font-size: font-size(body,medium);
+
+    .isDisabled {
+      color: palette(gray, base);
+    }
+  }
+
+  @include gmq(portrait) {
+    display: none;
+  }
+}
+
+.expandImage {
+  cursor: pointer;
+  margin-left: .5em;
+
+  @include gmq(portrait) {
+    width: 18px;
+  }
+}
+
+.isDisabled {
+  color: palette(gray, base);
+}
+
+.hideWhenDisabled {
+  display: none;
+}

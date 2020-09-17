@@ -1,0 +1,76 @@
+@import '../../styles/utils/helpers';
+@import '../../styles/base/colors';
+@import '../../styles/base/type';
+@import '../../styles/utils/media-queries';
+
+.wrapper {
+  width: 420px;
+  border: 3px solid palette(gray,light);
+  border-radius: 5px;
+
+  @include gmq(portable) {
+    width: 272px;
+  }
+}
+
+.carSummary {
+  flex: 2;
+  background: $white;
+  padding: 2em;
+
+  img {
+    width: 100px;
+  }
+
+  @include gmq(portable) {
+    padding: 2em 2.5em;
+  }
+}
+
+.manufacturerLogoWrapper {
+  align-self: center;
+  margin-right: 1em;
+
+  @include gmq(portable) {
+    display: none;
+  }
+}
+
+.carDetails {
+  flex: 2;
+  color: palette(blue,dark);
+}
+
+.name {
+  @include font-secondary;
+  font-size: 2rem;
+  font-weight: font-weight(light);
+  letter-spacing: letter-spacing(wide);
+  color: palette(gray,dark);
+  text-transform: uppercase;
+  line-height: 1;
+  margin-bottom: .5rem;
+  margin-top: .35rem;
+
+  @include gmq(portrait) {
+    font-size: 35px;
+  }
+}
+
+.color {
+  font-size: font-size(body,medium);
+  font-weight: font-weight(light);
+  line-height: line-height(title,large);
+  margin-bottom: .75em;
+  border-bottom: 1px solid palette(gray,light);
+}
+
+.vin {
+  font-size: font-size(body,small);
+  font-weight: font-weight(heavy);
+  margin-bottom: .75em;
+
+  a {
+    font-size: 1.2rem;
+  }
+}

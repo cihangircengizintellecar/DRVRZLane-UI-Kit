@@ -1,0 +1,89 @@
+@import '../base/colors';
+@import '../utils/media-queries';
+
+.content {
+  max-width: 1400px;
+
+  background: $white;
+  margin: 0 auto;
+  padding: 0 2rem;
+
+  &__footer {
+    margin-top: 1.3em;
+    padding-bottom: 3em;
+    border-top: 1px solid palette(gray,light);
+
+    .flex__row {
+      &__item {
+        padding: 2em 0;
+
+        &:first-child {
+          text-align: left;
+        }
+
+        &:nth-child(2) {
+          text-align: right;
+        }
+      }
+
+      button {
+        padding: .5em 3em;
+      }
+
+      .buttonDiv {
+        flex: 1;
+      }
+    }
+
+    @include gmq(portable) {
+      .flex__row {
+        button {
+          padding: .5em 2.3em;
+        }
+      }
+    }
+
+    @include gmq(portrait) {
+      border: 0;
+      margin-top: 0;
+      padding-bottom: 4em;
+
+      .flex__row {
+        display: flex;
+        justify-content: center;
+        // max-width: 24rem;
+        margin: auto;
+
+        &__item {
+          padding-top: 0;
+        }
+
+        .buttonDiv {
+          padding: 0;
+
+          button {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  @include gmq(portable) {
+    padding: 0 4.8rem;
+  }
+
+  @include gmq(portrait) {
+    width: 100%;
+    max-width: 100%;
+    min-width: 320px;
+    padding: .5rem 2rem 1.5rem 2rem;
+    margin: 0;
+  }
+}
+
+.bordered__box {
+  padding: 2em;
+  border: 2px solid palette(gray,light);
+  border-radius: 8px;
+}
