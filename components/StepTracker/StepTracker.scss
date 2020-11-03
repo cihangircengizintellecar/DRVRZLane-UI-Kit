@@ -105,14 +105,14 @@
 .first.completed {
   &::before {
     @extend .before;
-    background-color: palette(red,light);
+    background-color: palette(blue,light);
   }
 }
 
 .first.current {
   &::before {
     @extend .before;
-    background-color: palette(red,base);
+    background-color: palette(blue,base);
   }
 }
 
@@ -128,13 +128,13 @@
 .last.completed {
   &::after {
     @extend .after;
-    background-color: palette(red,light);
+    background-color: palette(blue,light);
   }
 }
 
 .last.current {
   &::after {
     @extend .after;
-    background-color: palette(red,base);
+    background-color: palette(blue,base);
   }
 }
