@@ -23,15 +23,20 @@ const Paginator = (props) => {
   const backButtonClassNames = ['PaginatorButton', (props.current === 0 ? 'disabled' : '')];
   const nextButtonClassNames = ['PaginatorButton', (((props.current + 1) * props.pageSize) >= props.total ? 'disabled' : '')];
 
+  const hasPaging = !(pageRangeTotal == props.total && props.pageSize > props.total);
   return (
     <div className={classes.Paginator}>
       <span className={classes.PaginatorText}>{pageRange}-{pageRangeTotal} of {props.total}</span>
-      <button className={backButtonClassNames.map((c) => classes[c] || c).join(' ')} onClick={clickBack(props)}>
-        <img src={arrowImage} name="back" />
-      </button>
-      <button className={nextButtonClassNames.map((c) => classes[c] || c).join(' ')} onClick={clickNext(props)}>
-        <img src={arrowImage} name="next" />
-      </button>
+      { hasPaging &&
+        <button className={backButtonClassNames.map((c) => classes[c] || c).join(' ')} onClick={clickBack(props)}>
+          <img src={arrowImage} name="back" />
+        </button>
+      }
+      {hasPaging && 
+        <button className={nextButtonClassNames.map((c) => classes[c] || c).join(' ')} onClick={clickNext(props)}>
+          <img src={arrowImage} name="next" />
+        </button>
+      }
     </div>
   );
 };
