@@ -73,6 +73,12 @@ class AddOnEMRow extends Component {
 
         <Column hideOnMobile classNames={[clEMAO.Column]}>
           <div className={`${clEM.OfferEMRequirements} ${clEM.OfferEMName} `}>
+          <a href={this.props.videoUrl}>Download product video</a>
+          </div>
+        </Column>
+
+        <Column hideOnMobile classNames={[clEMAO.Column]}>
+          <div className={`${clEM.OfferEMRequirements} ${clEM.OfferEMName} `}>
             <span className={this.props.readOnly ? classes.isDisabled : ''}>
               {formattedRequirements}
             </span>
@@ -101,6 +107,7 @@ AddOnEMRow.propTypes = {
   id: PropTypes.string,
   name: PropTypes.string,
   image: PropTypes.string,
+  videoUrl: PropTypes.string,
   requirements: PropTypes.string,
   value: PropTypes.string,
   readOnly: PropTypes.bool,
