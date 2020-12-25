@@ -1,5 +1,4 @@
-import PropTypes from 'prop-types';
-import React from 'react';
+import React, { PropTypes } from 'react';
 import classes from './Paginator.scss';
 
 import arrowImage from './arrow.svg';
@@ -22,8 +21,8 @@ const Paginator = (props) => {
 
   const backButtonClassNames = ['PaginatorButton', (props.current === 0 ? 'disabled' : '')];
   const nextButtonClassNames = ['PaginatorButton', (((props.current + 1) * props.pageSize) >= props.total ? 'disabled' : '')];
+  const hasPaging = !(pageRangeTotal == props.total && props.pageSize > props.total - 1);
 
-  const hasPaging = !(pageRangeTotal == props.total && props.pageSize > props.total);
   return (
     <div className={classes.Paginator}>
       <span className={classes.PaginatorText}>{pageRange}-{pageRangeTotal} of {props.total}</span>
