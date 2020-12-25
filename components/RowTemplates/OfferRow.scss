@@ -58,6 +58,10 @@
   margin: 0 !important;
 }
 
+.OfferValue {
+  white-space: pre-line;
+}
+
 .isDisabled {
   color: palette(gray, base) !important;
 
@@ -65,6 +69,10 @@
   div {
     color: palette(gray, base);
   }
+}
+
+.LenderCheckbox {
+  width: 50px;
 }
 
 .OfferRequirements {
