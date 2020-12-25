@@ -87,3 +87,10 @@
   color: palette(blue,base);
   background: palette(blue,light);
 }
+
+.disabled {
+  pointer-events: none;
+  background-color: #d3d3d352;
+  overflow: auto;
+  color: #8080804a !important;
+}

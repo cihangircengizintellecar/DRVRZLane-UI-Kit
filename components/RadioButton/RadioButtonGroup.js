@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import RadioButton from './RadioButton';
 import classes from './RadioButtonGroup.scss';
@@ -10,11 +9,11 @@ class RadioButtonGroup extends Component {
     this.props.onChange(e, value);
   }
 
-  computeSelectedValue (curValue) {
+  computeSelectedValue(curValue) {
     return curValue === this.props.selectedValue;
   }
 
-  render () {
+  render() {
     const radioButtons = this.props.options.map((opt, i) => {
       const hasStringValues = !opt.displayValue;
 
@@ -28,6 +27,7 @@ class RadioButtonGroup extends Component {
             recordField={this.props.recordField}
             checked={this.computeSelectedValue(opt)}
             onChange={this.handleOptionChange(opt)}
+            disabled={opt.disabled}
           />
         );
       }
@@ -43,6 +43,7 @@ class RadioButtonGroup extends Component {
           checked={this.computeSelectedValue(opt.value)}
           tabIndex={opt.tabIndex}
           onChange={this.handleOptionChange(opt.value)}
+          disabled={opt.disabled}
         />
       );
     });
@@ -56,22 +57,22 @@ class RadioButtonGroup extends Component {
 }
 
 RadioButtonGroup.propTypes = {
-  recordField: PropTypes.string,
-  onChange: PropTypes.func,
-  large: PropTypes.bool,
-  selectedValue: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.shape({})
+  recordField: React.PropTypes.string,
+  onChange: React.PropTypes.func,
+  large: React.PropTypes.bool,
+  selectedValue: React.PropTypes.oneOfType([
+    React.PropTypes.string,
+    React.PropTypes.shape({})
   ]),
-  options: PropTypes.arrayOf([
-    PropTypes.string,
-    PropTypes.shape({
-      displayValue: PropTypes.string,
-      value: PropTypes.string,
-      tabIndex: PropTypes.string
+  options: React.PropTypes.arrayOf([
+    React.PropTypes.string,
+    React.PropTypes.shape({
+      displayValue: React.PropTypes.string,
+      value: React.PropTypes.string,
+      tabIndex: React.PropTypes.string
     })
   ]),
-  className: PropTypes.string
+  className: React.PropTypes.string
 };
 
 export default RadioButtonGroup;

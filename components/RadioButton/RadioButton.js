@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import React from 'react';
 import classes from './RadioButton.scss';
 
@@ -7,6 +6,10 @@ const mapClassNames = (clsArr) => clsArr.map((c) => c).join(' ');
 const RadioButton = function (props) {
   const classNames = [classes.RadioButton, props.checked === true && classes.checked];
   const labelCls = [classes.RadioButton__label, props.large && classes['RadioButton__label--lg']];
+
+  if (props.disabled) {
+    classNames.push(classes.disabled);
+  }
 
   const handleKeyPress = (event) => {
     if (event.keyCode === 32) { // space bar
@@ -33,20 +36,21 @@ const RadioButton = function (props) {
 };
 
 RadioButton.propTypes = {
-  label: PropTypes.string,
-  large: PropTypes.bool,
-  checked: PropTypes.bool,
-  tabIndex: PropTypes.string,
-  onChange: PropTypes.func,
-  displayValue: PropTypes.string,
-  value: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.shape({})
+  label: React.PropTypes.string,
+  large: React.PropTypes.bool,
+  checked: React.PropTypes.bool,
+  tabIndex: React.PropTypes.string,
+  onChange: React.PropTypes.func,
+  displayValue: React.PropTypes.string,
+  value: React.PropTypes.oneOfType([
+    React.PropTypes.string,
+    React.PropTypes.shape({})
   ]),
-  recordField: PropTypes.string,
-  selectedValue: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.shape({})
+  disabled: propTypes.bool,
+  recordField: React.PropTypes.string,
+  selectedValue: React.PropTypes.oneOfType([
+    React.PropTypes.string,
+    React.PropTypes.shape({})
   ])
 };
 
