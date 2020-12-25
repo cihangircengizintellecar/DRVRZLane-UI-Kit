@@ -112,7 +112,7 @@
 .first.current {
   &::before {
     @extend .before;
-    background-color: palette(blue,base);
+    background-color: palette(blue,dark);
   }
 }
 
@@ -135,6 +135,6 @@
 .last.current {
   &::after {
     @extend .after;
-    background-color: palette(blue,base);
+    background-color: palette(blue,dark);
   }
 }
