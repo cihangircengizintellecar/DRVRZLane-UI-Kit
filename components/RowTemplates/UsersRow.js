@@ -1,5 +1,4 @@
-import PropTypes from 'prop-types';
-import React from 'react';
+import React, { PropTypes } from 'react';
 import classes from './OfferRow.scss';
 import clEM from './OfferEMRow.scss';
 import Row from '../TableElements/Row';
@@ -39,16 +38,18 @@ export const UsersRow = (props) => {
         </div>
       </Column>
 
-      <Column>
-        <div className={clEM.OfferEMButton}>
-          <Button
-            label={props.archiveText || 'Change Password'}
-            theme="light"
-            size="small"
-            onClick={props.onChangePassword}
-          />
-        </div>
-      </Column>
+      {props.onChangePassword &&
+        <Column>
+          <div className={clEM.OfferEMButton}>
+            <Button
+              label={'Change Password'}
+              theme="light"
+              size="small"
+              onClick={props.onChangePassword}
+            />
+          </div>
+        </Column>
+      }
     </Row>
   );
 };
