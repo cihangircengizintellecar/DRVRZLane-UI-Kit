@@ -12,7 +12,7 @@ const trimWhitespace = (string = '') => {
 };
 
 class Input extends Component {
-  constructor (props) {
+  constructor(props) {
     super(props);
 
     this.state = {
@@ -22,11 +22,11 @@ class Input extends Component {
     };
   }
 
-  componentWillMount () {
+  componentWillMount() {
     this.checkActive(this.props);
   }
 
-  componentWillReceiveProps (nextProps) {
+  componentWillReceiveProps(nextProps) {
     this.checkActive(nextProps);
   }
 
@@ -87,6 +87,18 @@ class Input extends Component {
     }
   };
 
+  inputOnKeyPress = (event) => {
+    if (this.props.inputAttrs.type == 'number') {
+      event = event || window.event;
+      var charCode = (typeof event.which == "undefined") ? event.keyCode : event.which;
+      var charStr = String.fromCharCode(charCode);
+
+      if (!charStr.match(/^[0-9]+$/)) {
+        event.preventDefault();
+      }
+    }
+  }
+
   inputOnKeyUp = (event) => {
     if (this.props.onKeyUp) {
       this.props.onKeyUp(event);
@@ -106,7 +118,7 @@ class Input extends Component {
     });
   };
 
-  render () {
+  render() {
     const {
       inputAttrs = {},
       validationErrors = []
@@ -137,6 +149,7 @@ class Input extends Component {
               onKeyUp={this.inputOnKeyUp}
               onKeyDown={this.inputOnKeyDown}
               onClick={this.inputOnClick}
+              onKeyPress={this.inputOnKeyPress}
               {...inputAttrs}
             />
             {hasValidationButNotDirty &&
