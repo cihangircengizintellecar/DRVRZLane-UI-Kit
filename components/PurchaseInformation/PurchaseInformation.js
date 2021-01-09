@@ -1,5 +1,7 @@
-import React, { PropTypes } from 'react';
+import PropTypes from 'prop-types';
+import React from 'react';
 import PurchaseLineItem from '../PurchaseLineItem';
+import Dropdown from '../Dropdown';
 import formatCurrency from '../../helpers/FormatCurrency';
 import addCommasForThousands from '../../helpers/AddCommasForThousands';
 import classes from './PurchaseInformation.scss';
@@ -10,7 +12,6 @@ const PurchaseInformation = function (props) {
   let addOnsWithValues = [];
   let addOnsWithoutValues = [];
   const isLeasing = (props.mileage && props.mileage !== null && props.mileage !== '') ? true : false;
-
   if (props.warrantiesAndAddons && props.warrantiesAndAddons.length > 0) {
     addOnsWithValues = props.warrantiesAndAddons.filter((w) => {
       return typeof w.price !== 'undefined' && w.price !== null;
@@ -44,140 +45,146 @@ const PurchaseInformation = function (props) {
             </div>
           </div>
 
-          {(downPayment && props.monthlyPayment && (props.apr !== null || props.mileage) && props.terms) &&
-            <div className={classes.PurchaseInfoFinancingTerms}>
-              <div className={classes.PurchaseInfoFlexRowItem}>
-                <span>Down</span>
-                <span>{formatCurrency(downPayment)}</span>
-              </div>
-              <div className={classes.PurchaseInfoFlexRowItem}>
-                <span>Monthly</span>
-                <span>{formatCurrency(props.monthlyPayment)}</span>
-              </div>
-              <div className={classes.PurchaseInfoFlexRowItem} hidden={isLeasing}>
-                <span>APR</span>
-                <span>{props.apr}%</span>
-              </div>
-              <div className={classes.PurchaseInfoFlexRowItem}>
-                <span>Terms</span>
-                <span>{props.terms} Mo.</span>
-              </div>
-              <div className={classes.PurchaseInfoFlexRowItem} hidden={!isLeasing}>
-                <span>Mileage</span>
-                <span>{props.mileage ? addCommasForThousands(props.mileage) : ''}</span>
-              </div>
+          <div>
+            <div className={classes.totalMonthlyPayment}>
+              <label>Current Estimated Payment:</label>
+              <h1 className={classes.payment}><span>$</span>{formatCurrency(props.monthlyPayment, true)}* <span className={classes.perMonth}>/ month</span></h1>
             </div>
-          }
 
-          <div className={classes.lineItems}>
-            {props.msrp &&
-              <PurchaseLineItem
-                name="Price"
-                value={props.msrp}
-                positive
+            <div className={classes.dropdowns}>
+              <Dropdown
+                label="Credit Score"
+                options={props.creditScoreOptions}
+                validationErrors={[]}
+                validateFunction={() => {}}
+                onChange={props.updateCreditScore}
+                selectedValue={props.creditScore}
+                dropdownAttrs={{ name: 'creditScore' }}
               />
-            }
-
-            {downPayment &&
-              <PurchaseLineItem
-                name="Down Payment"
-                value={downPayment}
+              <Dropdown
+                label="Terms"
+                options={props.termOptions}
+                validationErrors={[]}
+                validateFunction={() => {}}
+                onChange={props.updateTerms}
+                selectedValue={props.terms}
+                dropdownAttrs={{ name: 'terms' }}
               />
-            }
+            </div>
 
-            {props.tradeInOffer &&
-              <PurchaseLineItem
-                name="Trade In Offer"
-                value={props.tradeInOffer}
-              />
-            }
+            <div className={classes.priceBreakdown}>
+              <a onClick={props.togglePriceBreakdown}>View Price Breakdown</a>
+            </div>
+            <div className={classes.lineItems} hidden={!props.showPriceBreakdown}>
+              {props.msrp &&
+                <PurchaseLineItem
+                  name="Price"
+                  value={props.msrp}
+                  positive
+                />
+              }
 
-            {props.tradeInAmountOwed && (parseFloat(props.tradeInAmountOwed) > 0) &&
-              <PurchaseLineItem
-                name="Amount Owed"
-                value={props.tradeInAmountOwed}
-                positive
-              />
-            }
+              {downPayment &&
+                <PurchaseLineItem
+                  name="Down Payment"
+                  value={downPayment}
+                />
+              }
 
-            {addOnsWithValues.length > 0 && addOnsWithValues.map((row, index) => (
-              <PurchaseLineItem
-                key={index}
-                name={row.title}
-                value={row.warrantyPeriod[row.selectedPeriodIndex].price}
-                positive
-              />
-            ))
-            }
+              {props.tradeInOffer &&
+                <PurchaseLineItem
+                  name="Trade In Offer"
+                  value={props.tradeInOffer}
+                />
+              }
 
-            {(props.offersAndIncentives && props.offersAndIncentives.length > 0) && props.offersAndIncentives.map((row, index) => (
-              <PurchaseLineItem
-                key={index}
-                name={row.name}
-                value={row.amount}
-                infoType={row.infoType}
-              />
-            ))
-            }
+              {props.tradeInAmountOwed && (parseFloat(props.tradeInAmountOwed) > 0) &&
+                <PurchaseLineItem
+                  name="Amount Owed"
+                  value={props.tradeInAmountOwed}
+                  positive
+                />
+              }
 
-            {(props.extraFees && props.extraFees.length > 0) && props.extraFees.map((row, index) => (
-              <PurchaseLineItem
-                key={index}
-                name={row.name}
-                value={row.amount}
-                positive
-              />
-            ))
-            }
+              {addOnsWithValues.length > 0 && addOnsWithValues.map((row, index) => (
+                <PurchaseLineItem
+                  key={index}
+                  name={row.title}
+                  value={row.price}
+                  positive
+                />
+              ))
+              }
 
-            {props.tax ?
-              <PurchaseLineItem
-                name="Tax"
-                value={props.tax}
-                positive
-              /> : null
-            }
+              {(props.offersAndIncentives && props.offersAndIncentives.length > 0) && props.offersAndIncentives.map((row, index) => (
+                <PurchaseLineItem
+                  key={index}
+                  name={row.name}
+                  value={row.amount}
+                  infoType={row.infoType}
+                />
+              ))
+              }
 
-            {props.total &&
-              <PurchaseLineItem
-                name="Total*"
-                value={props.total}
-                positive
-              />
-            }
+              {(props.extraFees && props.extraFees.length > 0) && props.extraFees.map((row, index) => (
+                <PurchaseLineItem
+                  key={index}
+                  name={row.name}
+                  value={row.amount}
+                  positive
+                />
+              ))
+              }
 
-            {!props.leasingVehicle && props.totalLoanAmount &&
-              <PurchaseLineItem
-                name="Total Loan Amount*"
-                value={props.totalLoanAmount}
-                positive
-              />
-            }
+              {props.tax ?
+                <PurchaseLineItem
+                  name="Tax"
+                  value={props.tax}
+                  positive
+                /> : null
+              }
 
-            {props.leasingVehicle && props.totalMonthlyPayment &&
-              <PurchaseLineItem
-                name="Total Monthly Payment*"
-                value={props.totalMonthlyPayment}
-                positive
-              />
-            }
+              {props.total &&
+                <PurchaseLineItem
+                  name="Total*"
+                  value={props.total}
+                  positive
+                />
+              }
 
-            {(addOnsWithoutValues && addOnsWithoutValues.length > 0) &&
-              <div className={classes.addOnHeader}>You're Interested In:</div>
-            }
+              {!props.leasingVehicle && props.totalLoanAmount &&
+                <PurchaseLineItem
+                  name="Total Loan Amount*"
+                  value={props.totalLoanAmount}
+                  positive
+                />
+              }
 
-            {(props.warrantiesAndAddons && addOnsWithoutValues.length > 0) && addOnsWithoutValues.map((row, index) => (
-              <PurchaseLineItem
-                key={index}
-                name={row.title}
-                value="Pending"
-              />
-            ))
-            }
+              {props.leasingVehicle && props.totalMonthlyPayment &&
+                <PurchaseLineItem
+                  name="Total Monthly Payment*"
+                  value={props.totalMonthlyPayment}
+                  positive
+                />
+              }
+
+              {(addOnsWithoutValues && addOnsWithoutValues.length > 0) &&
+                <div className={classes.addOnHeader}>You're Interested In:</div>
+              }
+
+              {(props.warrantiesAndAddons && addOnsWithoutValues.length > 0) && addOnsWithoutValues.map((row, index) => (
+                <PurchaseLineItem
+                  key={index}
+                  name={row.title}
+                  value="Pending"
+                />
+              ))
+              }
+            </div>
           </div>
         </div>
       </div>
-      <div className={classes.finePrintSection}>*Subject to change upon dealer inspection.</div>
+      <div className={classes.finePrintSection}>*Subject to change upon dealer inspection. Monthly payment displayed is only an estimate and may change.</div>
     </div>
   );
 };
@@ -196,17 +203,17 @@ PurchaseInformation.propTypes = {
   terms: PropTypes.string,
   apr: PropTypes.string,
   mileage: PropTypes.string,
-  extraFees: React.PropTypes.arrayOf(React.PropTypes.shape({
-    name: React.PropTypes.string,
-    value: React.PropTypes.string
+  extraFees: PropTypes.arrayOf(PropTypes.shape({
+    name: PropTypes.string,
+    value: PropTypes.string
   })),
-  offersAndIncentives: React.PropTypes.arrayOf(React.PropTypes.shape({
-    name: React.PropTypes.string,
-    value: React.PropTypes.string
+  offersAndIncentives: PropTypes.arrayOf(PropTypes.shape({
+    name: PropTypes.string,
+    value: PropTypes.string
   })),
-  warrantiesAndAddons: React.PropTypes.arrayOf(React.PropTypes.shape({
-    name: React.PropTypes.string,
-    value: React.PropTypes.string
+  warrantiesAndAddons: PropTypes.arrayOf(PropTypes.shape({
+    name: PropTypes.string,
+    value: PropTypes.string
   })),
   extendedWarranty: PropTypes.string,
   gapInsurance: PropTypes.string,
