@@ -2,6 +2,10 @@
 @import '../../styles/base/type';
 @import '../../styles/utils/media-queries';
 
+p {
+  white-space: pre-wrap;
+}
+
 .OfferDetails {
   max-width: 700px;
   padding: 4em 8em;
