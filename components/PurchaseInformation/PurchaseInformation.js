@@ -110,7 +110,7 @@ const PurchaseInformation = function (props) {
                 <PurchaseLineItem
                   key={index}
                   name={row.title}
-                  value={row.warrantyTermAndValue[row.selectedTermIndex].price}
+                  value={row.warrantyTermAndValue[row.selectedTermAndValueIndex].price}
                   positive
                 />
               ))
