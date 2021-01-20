@@ -27,6 +27,19 @@ export const UsersRow = (props) => {
         </div>
       </Column>
 
+      {props.onEdit &&
+        <Column>
+          <div className={clEM.OfferEMButton}>
+            <Button
+              label={props.onEditText || 'Edit'}
+              theme="inverted__dark__standard"
+              size="small"
+              onClick={props.onEdit}
+            />
+          </div>
+        </Column>
+      }
+
       <Column>
         <div className={clEM.OfferEMButton}>
           <Button
@@ -38,18 +51,6 @@ export const UsersRow = (props) => {
         </div>
       </Column>
 
-      {props.onChangePassword &&
-        <Column>
-          <div className={clEM.OfferEMButton}>
-            <Button
-              label={'Change Password'}
-              theme="light"
-              size="small"
-              onClick={props.onChangePassword}
-            />
-          </div>
-        </Column>
-      }
     </Row>
   );
 };
@@ -60,6 +61,7 @@ UsersRow.propTypes = {
   lastLogIn: PropTypes.string,
   archiveText: PropTypes.string,
   onArchive: PropTypes.func,
+  onEdit: PropTypes.func,
   onChangePassword: PropTypes.func
 };
 
