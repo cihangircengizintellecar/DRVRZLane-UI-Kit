@@ -1,0 +1,61 @@
+@import '../../styles/base/colors';
+@import '../../styles/base/type';
+@import '../../styles/utils/media-queries';
+
+.ModalOverlay {
+  background: $black;
+  opacity: .4;
+  z-index: 10;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+}
+
+.Modal {
+  position: fixed;
+  transform: translate(-50%, -50%);
+  width: 25%;
+  top: 50%;
+  left: 50%;
+  background: $white;
+  border-radius: 7px;
+  z-index: 10;
+  min-width: 200px;
+
+  @include gmq(portrait) {
+    width: 90vw;
+  }
+}
+
+.ModalClose {
+  z-index: 100;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  opacity: .7;
+  background: none;
+  padding: 0;
+  border: 0;
+}
+
+.ModalBody {
+  overflow: hidden;
+  padding: 10%;
+  font-size: font-size(body,medium);
+  text-align: left;
+  border-radius: 3px;
+  color: palette(gray, dark);
+  background: $white;
+}
+
+.ModalButtons{
+  padding-top: 9%;
+  display: flex;
+  text-align: center;
+}
+
+.ModalButton{
+  width: 50%;
+}

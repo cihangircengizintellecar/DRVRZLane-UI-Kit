@@ -29,3 +29,4 @@ export VehicleInformationCard from './VehicleInformationCard';
 export WarrantyBox from './WarrantyBox';
 export MaskedInput from './MaskedInput';
 export DealerPurchaseInformation from './DealerPurchaseInformation';
+export ConfirmBox from './ConfirmBox';
