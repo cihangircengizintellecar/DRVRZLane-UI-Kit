@@ -98,6 +98,15 @@ class AddOnEMRow extends Component {
             disabled={this.props.readOnly}
           />
         </Column>
+        <Column>
+        <Button
+          label="Edit"
+          theme="light"
+          size="medium"
+          onClick={this.props.onEdit}
+          disabled={this.props.readOnly}
+        />
+        </Column>
       </Row>
     );
   }
@@ -114,6 +123,7 @@ AddOnEMRow.propTypes = {
   onSelect: PropTypes.func,
   onExpand: PropTypes.func,
   onArchive: PropTypes.func,
+  onEdit: PropTypes.func,
   children: PropTypes.node
 };
 
