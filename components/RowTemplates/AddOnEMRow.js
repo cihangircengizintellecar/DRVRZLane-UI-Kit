@@ -9,7 +9,7 @@ import clEMAO from './AddOnEMRow.scss';
 import Button from '../Button';
 
 class AddOnEMRow extends Component {
-  constructor (props) {
+  constructor(props) {
     super(props);
 
     this.state = {
@@ -37,7 +37,7 @@ class AddOnEMRow extends Component {
     }
   }
 
-  render () {
+  render() {
     let formattedRowValue = '';
     if (this.props.value) {
       formattedRowValue = `${this.props.value.toLocaleString()}`;
@@ -73,7 +73,7 @@ class AddOnEMRow extends Component {
 
         <Column hideOnMobile classNames={[clEMAO.Column]}>
           <div className={`${clEM.OfferEMRequirements} ${clEM.OfferEMName} `}>
-          { this.props.brochureUrl && <a href={this.props.brochureUrl}>Download product brochure</a>}
+            {this.props.brochureUrl && <a href={this.props.brochureUrl}>Download Video/Info</a>}
           </div>
         </Column>
 
@@ -99,13 +99,13 @@ class AddOnEMRow extends Component {
           />
         </Column>
         <Column>
-        <Button
-          label="Edit"
-          theme="light"
-          size="medium"
-          onClick={this.props.onEdit}
-          disabled={this.props.readOnly}
-        />
+          <Button
+            label="Edit"
+            theme="light"
+            size="medium"
+            onClick={this.props.onEdit}
+            disabled={this.props.readOnly}
+          />
         </Column>
       </Row>
     );
