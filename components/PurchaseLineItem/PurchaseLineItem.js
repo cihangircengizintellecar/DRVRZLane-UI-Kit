@@ -5,7 +5,7 @@ import formatCurrency from '../../helpers/FormatCurrency';
 import makeNegative from '../../helpers/MakeNegative';
 import Input from '../Input/Input';
 
-const PurchaseLineItem = ({ name, value, positive, onEdit = false, onChange }) => {
+const PurchaseLineItem = ({ name, value, positive, isEdit = false, onChange }) => {
   const isATotal = (name === 'Total*' || name === 'Total Loan Amount*' || name === 'Total Monthly Payment*');
   const purchaseLineItemClasses = ['purchaseLineItem', (isATotal ? 'total' : '')];
   let formattedValue = '-';
@@ -22,7 +22,7 @@ const PurchaseLineItem = ({ name, value, positive, onEdit = false, onChange }) =
       {(value === 'Pending') ?
         <span className={classes.addOns}><h2>Pending</h2></span>
         :
-        (onEdit) ? <Input theme="dealerPurchase" onChange={onChange} value={value} inputAttrs={{ name: name, type: 'number' }} validateFunction={() => { return true }} /> : <span>{formattedValue}</span>
+        (isEdit) ? <Input theme="dealerPurchase" onChange={onChange} value={value} inputAttrs={{ name: name, type: 'number' }} validateFunction={() => { return true }} /> : <span>{formattedValue}</span>
       }
 
     </div>
@@ -33,7 +33,7 @@ PurchaseLineItem.propTypes = {
   name: PropTypes.string,
   value: PropTypes.string,
   positive: PropTypes.bool,
-  onEdit: PropTypes.bool,
+  isEdit: PropTypes.bool,
   onChange: PropTypes.func
 };
 

@@ -73,7 +73,7 @@ const PurchaseInformation = function (props) {
             <PurchaseLineItem
               name="Price"
               value={props.msrp}
-              onEdit={props.onEdit}
+              isEdit={props.isEdit}
               onChange={props.onPriceChange}
               positive
             />
@@ -83,7 +83,7 @@ const PurchaseInformation = function (props) {
             <PurchaseLineItem
               name="Down Payment"
               value={downPayment}
-              onEdit={props.onEdit}
+              isEdit={props.isEdit}
               onChange={props.onDownPaymentChange}
             />
           }
@@ -92,7 +92,7 @@ const PurchaseInformation = function (props) {
             <PurchaseLineItem
               name="Trade In Offer"
               value={props.tradeInOffer}
-              onEdit={props.onEdit}
+              isEdit={props.isEdit}
               onChange={props.onTradeOfferChange}
             />
           }
@@ -101,7 +101,7 @@ const PurchaseInformation = function (props) {
             <PurchaseLineItem
               name="Amount Owed"
               value={props.tradeInAmountOwed}
-              onEdit={props.onEdit}
+              isEdit={props.isEdit}
               onChange={props.onTradeInAmountChange}
               positive
             />
@@ -198,7 +198,7 @@ PurchaseInformation.propTypes = {
   tradeInOffer: PropTypes.string,
   tradeInAmountOwed: PropTypes.string,
   downPayment: PropTypes.string,
-  onEdit: PropTypes.bool,
+  isEdit: PropTypes.bool,
   onPriceChange: PropTypes.func,
   onDownPaymentChange: PropTypes.func,
   onTradeOfferChange: PropTypes.func,
