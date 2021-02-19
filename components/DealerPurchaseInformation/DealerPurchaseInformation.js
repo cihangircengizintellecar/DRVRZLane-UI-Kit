@@ -20,7 +20,7 @@ const PurchaseInformation = function (props) {
       return wtf;
     });
   }
-
+  
   const downPayment = props.downPayment === 0 ? '0' : props.downPayment;
 
   return (
@@ -73,6 +73,8 @@ const PurchaseInformation = function (props) {
             <PurchaseLineItem
               name="Price"
               value={props.msrp}
+              onEdit={props.onEdit}
+              onChange={props.onPriceChange}
               positive
             />
           }
@@ -81,6 +83,8 @@ const PurchaseInformation = function (props) {
             <PurchaseLineItem
               name="Down Payment"
               value={downPayment}
+              onEdit={props.onEdit}
+              onChange={props.onDownPaymentChange}
             />
           }
 
@@ -88,6 +92,8 @@ const PurchaseInformation = function (props) {
             <PurchaseLineItem
               name="Trade In Offer"
               value={props.tradeInOffer}
+              onEdit={props.onEdit}
+              onChange={props.onTradeOfferChange}
             />
           }
 
@@ -95,6 +101,8 @@ const PurchaseInformation = function (props) {
             <PurchaseLineItem
               name="Amount Owed"
               value={props.tradeInAmountOwed}
+              onEdit={props.onEdit}
+              onChange={props.onTradeInAmountChange}
               positive
             />
           }
@@ -190,6 +198,11 @@ PurchaseInformation.propTypes = {
   tradeInOffer: PropTypes.string,
   tradeInAmountOwed: PropTypes.string,
   downPayment: PropTypes.string,
+  onEdit: PropTypes.bool,
+  onPriceChange: PropTypes.func,
+  onDownPaymentChange: PropTypes.func,
+  onTradeOfferChange: PropTypes.func,
+  onTradeInAmountChange: PropTypes.func,
   monthlyPayment: PropTypes.string,
   terms: PropTypes.string,
   apr: PropTypes.string,
