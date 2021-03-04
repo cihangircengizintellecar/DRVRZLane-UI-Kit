@@ -3,8 +3,9 @@ import React from 'react';
 import classes from './PurchaseLineItem.scss';
 import formatCurrency from '../../helpers/FormatCurrency';
 import makeNegative from '../../helpers/MakeNegative';
+import Input from '../Input/Input';
 
-const PurchaseLineItem = ({ name, value, positive }) => {
+const PurchaseLineItem = ({ name, value, positive, isEdit = false, onChange }) => {
   const isATotal = (name === 'Total*' || name === 'Total Loan Amount*' || name === 'Total Monthly Payment*');
   const purchaseLineItemClasses = ['purchaseLineItem', (isATotal ? 'total' : '')];
   let formattedValue = '-';
@@ -21,7 +22,7 @@ const PurchaseLineItem = ({ name, value, positive }) => {
       {(value === 'Pending') ?
         <span className={classes.addOns}><h2>Pending</h2></span>
         :
-        <span>{formattedValue}</span>
+        (isEdit) ? <Input theme="dealerPurchase" onChange={onChange} value={value} inputAttrs={{ name: name, type: 'number' }} validateFunction={() => { return true }} /> : <span>{formattedValue}</span>
       }
 
     </div>
@@ -31,7 +32,9 @@ const PurchaseLineItem = ({ name, value, positive }) => {
 PurchaseLineItem.propTypes = {
   name: PropTypes.string,
   value: PropTypes.string,
-  positive: PropTypes.bool
+  positive: PropTypes.bool,
+  isEdit: PropTypes.bool,
+  onChange: PropTypes.func
 };
 
 export default PurchaseLineItem;

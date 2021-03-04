@@ -16,6 +16,24 @@
   }
 }
 
+.dealerPurchase {
+  width: 35%;
+  margin-left: auto;
+  text-align: right;
+  width: 35%;
+  border:solid;
+  border-color: lightgrey;
+  border-width: thin;
+  font-weight: font-weight(heavy);
+  letter-spacing: .02rem;
+  margin-bottom: 0%;
+}
+.dealerPurchase input {
+  padding: 0%;
+  font-size: 100%;
+  text-align: right;
+}
+
 .label {
   color: $black;
   display: block;

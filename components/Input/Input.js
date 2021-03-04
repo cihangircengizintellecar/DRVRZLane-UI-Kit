@@ -93,7 +93,7 @@ class Input extends Component {
       var charCode = (typeof event.which == "undefined") ? event.keyCode : event.which;
       var charStr = String.fromCharCode(charCode);
 
-      if (!charStr.match(/^[0-9]+$/)) {
+      if (!charStr.match(/^[0-9]+$/) && !(this.props.isDecimal === true && charStr == '.')) {
         event.preventDefault();
       }
     }
@@ -168,7 +168,7 @@ Input.propTypes = {
   theme: PropTypes.string,
   size: PropTypes.string,
   inputAttrs: PropTypes.shape({
-    name: PropTypes.string
+    name: PropTypes.string    
   }),
   disabled: PropTypes.bool,
   label: PropTypes.string,
@@ -181,7 +181,8 @@ Input.propTypes = {
   onClick: PropTypes.func,
   validationErrors: PropTypes.arrayOf(PropTypes.string),
   validateFunction: PropTypes.func.isRequired,
-  children: PropTypes.node
+  children: PropTypes.node,
+  isDecimal: PropTypes.bool
 };
 
 export default Input;
